@@ -4,5 +4,24 @@ runtime: php55
 api_version: 1
 
 handlers:
-- url: /.*
+
+- url: /user_guide
+  static_dir: user_guide
+
+- url: /assets/js/*
+  static_dir: assets/js
+
+- url: /assets/css/*
+  static_dir: assets/css
+
+- url: /assets/images/*
+  static_dir: assets/images
+
+- url: /
   script: index.php
+
+- url: /(.+)
+  script: index.php
+
+
+

@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'http://localhost/eis_intranet/';
+$config['base_url'] = '';
 
 /*
 |--------------------------------------------------------------------------

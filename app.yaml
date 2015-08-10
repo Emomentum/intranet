@@ -1,18 +1,21 @@
 application: emomentumintranet-1009
-version: 1
+version: 3
 runtime: php55
 api_version: 1
 
 handlers:
 
-- url: /user_guide
-  static_dir: user_guide
-
 - url: /assets/js/*
   static_dir: assets/js
+  
+- url: /AdminAssets/js/*
+  static_dir: AdminAssets/js
+  
+- url: /AdminAssets/fonts/*
+  static_dir: AdminAssets/fonts
 
-- url: /assets/css/*
-  static_dir: assets/css
+- url: /AdminAssets/css/*
+  static_dir: AdminAssets/css
 
 - url: /assets/images/*
   static_dir: assets/images

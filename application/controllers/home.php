@@ -5,8 +5,8 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->model('homeModel');		
-		$data['content']=$this->homeModel->getNews();
+		$this->load->model('Home_model');		
+		$data['content']=$this->Home_model->getNews();
 		$data['breadcrum'] = "Home";
 		$this->load->view('home',$data);
 	}					

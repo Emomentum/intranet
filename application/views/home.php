@@ -10,8 +10,6 @@
 	$this->load->view('includes/breadcrum');
 ?>
 
-<hr  style="margin-top: 0px;"/>
-
 <!----------------service------------->
  
 <div class="services" id="services">

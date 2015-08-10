@@ -16,19 +16,16 @@ class Blog_model extends CI_model
 		return false;
 		}
 	}
-	public function getTopic()
+	public function getTopics()
 	{
-		$result = $this->db->get('topics')->result();
+		$blogId = 5;
+		$result = $this->db->get_where('blog_topic',array('Blog_type_ID ='=> $blogId))->result();
 		return $result;
 	}
-    public function getComment($topicid)
+    public function getComments($topicid)
     {
-        $result = $this->db->get_where('comments',array('topicid ='=> $topicid))->result();
-        if(empty($result)):
-            return false;
-        else:
+        $result = $this->db->get_where('blog_comments',array('Blog_topic_ID ='=> $topicid))->result();
             return $result;
-        endif;
     }
     public function setComments($topicid,$mydetails)
     {

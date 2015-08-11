@@ -15,7 +15,8 @@
 <div class="services" id="services">
     <div class="container">
     <div class="row">
-    <div class="col-lg-5 service" id="service1"><div class="panel panel-default">
+    <div class="col-lg-5 service" id="service1" >
+    	<div class="panel panel-default" style="min-height: 550px;">
                         <div class="panel-heading">
                             Vision And Mission
 							</div>
@@ -48,28 +49,33 @@
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel --></div>
-					 <div class="col-lg-4  service" id="service1"><div class="panel panel-default"  style="min-height: 609px;">
+					 <div class="col-lg-4  service" id="service1"><div class="panel panel-default"  style="min-height: 550px;">
                         <div class="panel-heading">
                             Announcement
                         </div>
                        
                           <!-- List group -->
   <ul class="list-group">
-  	<?php
-    	
+  	<?php	
 	foreach ($content as $object ) {
 		
 		$title= $object->Topic;
+		//$title= $object->postTitle;
+		$id=$object->Blog_topic_ID;
+        $topic= anchor('home/upcoming_events?id='.$id.'',''.$title.'');
 	
-	   echo '<li class="list-group-item">'.$title.'</li>';   
+	   echo '<li class="list-group-item">'.$topic.'</li>';   
 	
 	}
 	?>
+<li class="list-group-item"> <?php echo anchor('home/upcoming_events','View All')?> </li> 
+  
+              
   </ul>
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel --></div>
-					 <div class="col-lg-3 service" id="service1"><div class="panel panel-default" style="min-height: 609px;">
+					 <div class="col-lg-3 service" id="service1"><div class="panel panel-default" style="min-height: 550px;">
                         <div class="panel-heading">
                             Online Processes
                         </div>
@@ -141,12 +147,20 @@
                         </div>
                         <!-- List group -->
   <ul class="list-group">
-    <li class="list-group-item">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</li>
-    <li class="list-group-item">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</li>
-    <li class="list-group-item">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</li>
-    <li class="list-group-item">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</li>
-    <li class="list-group-item">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</li>
-  </ul>
+    <?php
+    	
+	foreach ($events as $object ) {
+		
+		$title= $object->postTitle;
+		$title= $object->postTitle;
+		$id=$object->postID;
+        $topic= anchor('home/single_events?id='.$id.'',''.$title.'');
+	
+	   echo '<li class="list-group-item">'.$topic.'</li>';   
+	
+	}
+	?>
+<li class="list-group-item"> <?php echo anchor('home/upcoming_events','View All')?> </li> </ul>
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel --></div>
@@ -156,12 +170,21 @@
                         </div>
                         <!-- List group -->
   <ul class="list-group">
-    <li class="list-group-item">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</li>
-    <li class="list-group-item">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</li>
-    <li class="list-group-item">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</li>
-    <li class="list-group-item">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</li>
-    <li class="list-group-item">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</li>
-  </ul>
+     <?php
+    	
+	foreach ($events as $object ) {
+		
+		$title= $object->postTitle;
+		$title= $object->postTitle;
+		$id=$object->postID;
+        $topic= anchor('home/single_events?id='.$id.'',''.$title.'');
+	
+	   echo '<li class="list-group-item">'.$topic.'</li>';   
+	
+	}
+	?>
+<li class="list-group-item"> <?php echo anchor('home/upcoming_events','View All')?> </li> 
+</ul>
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel --></div>

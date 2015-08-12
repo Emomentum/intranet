@@ -64,7 +64,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost', //cloudsql/emomentumintranet-1009:database1,
+	'hostname' => 'localhost', //cloudsql/emomentumintranet-1009:intranetdatabase'
 	'username' => 'root',
 	'password' => '',
 	'database' => 'emomentum_framework',

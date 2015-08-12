@@ -52,13 +52,11 @@ function upcoming()
 	$this->load->view('Admin/upcoming',$data);
 }
 
-function create_event()
+function create_events()
 {
-	$this->load->model('Home_model');
-	$data['upcoming']=$this->Home_model->createPage();
-	$this->load->view('Admin/includes/create_page',$data);
 	
-	
+$this->load->view('Admin/includes/create_page');
+
 }
 
 function viewpage()
@@ -73,14 +71,40 @@ function edit_page()
 {
 	$this->load->model('Home_model');
 	$data['upcoming']=$this->Home_model->getUpcomingEventNews();
-	$this->load->view('Admin/includes/edit_page',$data);
+	//$this->load->view('Admin/includes/edit_page',$data);
+	$this->upcoming();
 }
 
 function delete_page()
 {
+	$id=$_GET['id'];
 	$this->load->model('Home_model');
-	$data['upcoming']=$this->Home_model->getUpcomingEventNews();
-	$this->load->view('Admin/includes/delete_page',$data);
+	$this->Home_model->delete_Event($id);
+	$data['action']='Deleted';
+	//$this->load->view('Admin/includes/upcoming',$data);
+	$this->upcoming();
 }
 
+}
+
+function save_events()
+{
+	 // if($this->input->post(‘submit’)){
+	  	
+	$this->load->model('Home_model');
+	$date=date('Y-m-d H:i:s');
+	$data = array(
+'postTitle' => $this->input->post('title'),
+'postDesc' => $this->input->post('desc'),
+'postCont' => $this->input->post('content'),
+'postDate' => $this->input->$date );
+
+//Transfering data to Model
+$this->Home_model->createPage($data);
+
+$data['message'] = 'Data Inserted Successfully';
+//Loading View
+//$this->load->view('Admin/includes/upcoming', $data);
+$this->upcoming();
+// }
 }

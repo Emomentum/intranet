@@ -75,13 +75,18 @@ class Home_model extends CI_Model {
 		 }
 		}
 	 
-	 function createPage(){
-	 	
-			$query=$this->db->query("INSERT INTO blog_posts(title,content,date,page_type,child_of) VALUES ('$title','$content','$date','$page_type','$child_of')");
-
-		}
+	
 	 
-
+function createPage($data){
+	 	
+	$this->db->insert('blog_posts', $data);
+}
+	 
+function delete_Event($id)
+{
+   $this->db->where('postID', $id);
+   $this->db->delete('blog_posts'); 
+}
 
 }
 	

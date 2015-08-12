@@ -7,7 +7,7 @@ $('li.blog_topic a').click(function(){
 	var topic = current.find("input.blogTopicId").val();
 	var comment = document.getElementById('comments_holder');
 	var topicid = parseInt(topic);
-    var link = 'getBlogComments/'+topicid;
+    var link = 'blog/getBlogComments/'+topicid;
     		$.ajax({
 			url:link,
 			type:"POST",
@@ -40,9 +40,10 @@ $('li.blog_topic a').click(function(){
 $('li.blog_topic a').click(function(){
 	var current = $(this).closest("li.blog_topic");
 	var topic = current.find("input.blogTopicId").val();
-	var comment = document.getElementById('comments_holder');
+	var description = document.getElementById('BlogDescription');
+	var Topicdescription = document.getElementById('BlogTopic');
 	var topicid = parseInt(topic);
-    var link = 'getBlogDescription/'+topicid;
+    var link = 'blog/getBlogDescription/'+topicid;
     		$.ajax({
 			url:link,
 			type:"POST",
@@ -50,14 +51,17 @@ $('li.blog_topic a').click(function(){
 			cache:false,
 			data:{},
 			success:function(result){
+				var result =JSON.parse(result);
 				for (var i=0; i < result.length; i++) {
 				  
 		 		  	var BlogDetails = result[i].details;
-				    console.log(BlogDetails);
+		 		  	var BlogTopic = result[i].Topic;
+				    description.innerHTML = BlogDetails;
+				    Topicdescription.innerHTML = BlogTopic;
 				   }
 	},
 			error:function(msg){
-	
+	console.log(msg);
 			}
 		})
 	return false;	

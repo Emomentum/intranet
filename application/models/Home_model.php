@@ -60,9 +60,30 @@ class Home_model extends CI_Model {
 	 
     
 	 
-    }
+    
+/*.....................................................Admin section.............................................*/
      
-     
+     function getUpcomingEventNews(){
+			$query=$this->db->query("SELECT * FROM blog_posts ");
+		 
+		 if ($query->num_rows()> 0) {
+		 	
+		 	return $query->result(); //return an array of objects
+			 
+		 } else {
+			 return NULL;
+		 }
+		}
+	 
+	 function createPage(){
+	 	
+			$query=$this->db->query("INSERT INTO blog_posts(title,content,date,page_type,child_of) VALUES ('$title','$content','$date','$page_type','$child_of')");
+
+		}
+	 
+
+
+}
 	
 
 ?>

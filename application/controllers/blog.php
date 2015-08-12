@@ -10,8 +10,14 @@ class Blog extends CI_Controller {
 	public function index()
 	{
 		$data['blogTopics'] = $this->getTopic();
+		$data['blogTopicDescription'] = $this->blog_model->getTopicDescription();
+		$data['topicComments'] = $this->blog_model->getComments($data['blogTopicDescription'][0]->Blog_topicID);
 		$data['breadcrum'] = "Blog";
 		$this->load->view('blog',$data);
+		// echo "<pre>";
+		// print_r($data['blogTopicDescription'][0]->Blog_topicID);
+		// echo "</pre>";
+		
 	}
 	function getTopic()
 	{
@@ -24,6 +30,10 @@ class Blog extends CI_Controller {
        else:
        return $this->blog_model->getTopics();
        endif;
+	}
+	function getBlogDescription($topicid){
+		print_r(json_encode($this->blog_model->getTopicDescriptions($topicid)));
+		
 	}	
      function getBlogComments($topicId){
      	 if(empty($this->blog_model->getComments($topicId))): 

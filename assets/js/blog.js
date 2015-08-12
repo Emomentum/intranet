@@ -7,7 +7,7 @@ $('li.blog_topic a').click(function(){
 	var topic = current.find("input.blogTopicId").val();
 	var comment = document.getElementById('comments_holder');
 	var topicid = parseInt(topic);
-    var link = 'blog/getBlogComments/'+topicid;
+    var link = 'getBlogComments/'+topicid;
     		$.ajax({
 			url:link,
 			type:"POST",
@@ -33,6 +33,31 @@ $('li.blog_topic a').click(function(){
 				    comment.innerHTML = "<p>"+noComments+"</p><hr style ='color: #07AA53;border: dotted 1px;'>";
 					comment.innerHTML = comment.innerHTML + '<textarea style = "width:100%;height:121px" name="comments" id = "comments" class = "newcomments"></textarea>'+'<br/><input type ="submit" value = "Submit" id ="add_comments" class = "btn btn-primary" style = "margin:10px;float:right;font-size:13px;"/>';
 			
+			}
+		})
+	return false;	
+})
+$('li.blog_topic a').click(function(){
+	var current = $(this).closest("li.blog_topic");
+	var topic = current.find("input.blogTopicId").val();
+	var comment = document.getElementById('comments_holder');
+	var topicid = parseInt(topic);
+    var link = 'getBlogDescription/'+topicid;
+    		$.ajax({
+			url:link,
+			type:"POST",
+			datatype:"json",
+			cache:false,
+			data:{},
+			success:function(result){
+				for (var i=0; i < result.length; i++) {
+				  
+		 		  	var BlogDetails = result[i].details;
+				    console.log(BlogDetails);
+				   }
+	},
+			error:function(msg){
+	
 			}
 		})
 	return false;	

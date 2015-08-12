@@ -32,9 +32,9 @@
 		<div class="panel panel-default"  style="min-height: 609px;">
 			<?php foreach($blogTopicDescription as $description):?>
     			<div class="panel-heading">
-            		  <span><?=$description->Topic ;?></span>
+            		  <span id = "BlogTopic"><?=$description->Topic ;?></span>
     			</div> 
-    			<div style ="padding: 13px 31px 6px 31px;text-align: justify;">
+    			<div style ="padding: 13px 31px 6px 31px;text-align: justify;" id = "BlogDescription">
     				
     					<?=$description->details;?>
     			</div>

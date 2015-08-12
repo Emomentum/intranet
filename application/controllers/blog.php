@@ -34,8 +34,8 @@ class Blog extends CI_Controller {
 	function getBlogDescription($topicid){
 		print_r(json_encode($this->blog_model->getTopicDescriptions($topicid)));
 		
-	}	
-     function getBlogComments($topicId){
+	}
+   public function getBlogComments($topicId){
      	 if(empty($this->blog_model->getComments($topicId))): 
          $array = array();
          $notopic = new stdClass;

@@ -39,8 +39,12 @@ class Blog_model extends CI_model
 		return $result->result();
 	}
 	public function getTopicDescriptions ($topicid){
-		$result = $this->db->get_where('blog_details',array('Blog_topic_id ='=> $topicid));
-				  $this->db->limit(1);
+		$this->db->select('*');
+		$this->db->from('blog_details');
+		$this->db->where(array('Blog_topic_id ='=> $topicid));
+		$this->db->join('blog_topic','blog_topic.Blog_topicID = blog_details.Blog_topic_id');
+	    $this->db->limit(1);
+		$result = $this->db->get();
         return $result->result();
 		
 	}

@@ -61,7 +61,7 @@
 		
 		$title= $object->Topic;
 		//$title= $object->postTitle;
-		$id=$object->Blog_topic_ID;
+		$id=$object->Blog_topicID;
         $topic= anchor('home/upcoming_events?id='.$id.'',''.$title.'');
 	
 	   echo '<li class="list-group-item">'.$topic.'</li>';   

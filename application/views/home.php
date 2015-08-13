@@ -1,3 +1,17 @@
+<?
+use google\appengine\api\users\user;
+use google\appengine\api\users\UserService;
+#Look for current Google account session
+$user = UserService::getCurrentUser();
+if ($user == null){
+	header('Location: ' . UserService::createLoginURL($_SERVER['REQUEST_URI']));
+}
+else{
+	if (htmlspecialchars($user->getAuthDomain() == 'gmail.com')){
+	//echo 'hello ' . htmlspecialchars($user->getNickname());
+	//echo '<br>';
+	//echo 'Your Domain ' . htmlspecialchars($user->getAuthDomain());
+?>
 <html>
 <head>
 <?php $this->load->view('includes/scripts');?>
@@ -192,5 +206,14 @@
   </div>
   </div>
 <?php $this->load->view('includes/footer');?>
+
+<?php
+}
+else{
+	echo "The account you are using does not have permission to access this application";
+}
+}
+
+?>
 
 </body></html>

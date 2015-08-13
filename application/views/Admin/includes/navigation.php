@@ -239,7 +239,7 @@
                             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
 						 <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i>Home<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-home fa-fw"></i>Home<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                    <?php echo anchor('home/slider','Slider')?>
@@ -288,13 +288,13 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Gallery<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-camera-retro fa-fw"></i> Gallery<span class="fa arrow"></span></a>
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Products</a>
+                            <a href="tables.html"><i class="fa fa-edit fa-fw"></i> Products</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Blog</a>
+                           <?=anchor('admin/blog','<i class="fa fa-comments-o fa-fw"></i>Blog');?>
                         </li>
                     </ul>
                 </div>

@@ -1,5 +1,4 @@
 <?php
-/*
 use google\appengine\api\users\user;
 use google\appengine\api\users\UserService;
 #Look for current Google account session
@@ -8,6 +7,11 @@ if ($user == null){
 	header('Location: ' . UserService::createLoginURL($_SERVER['REQUEST_URI']));
 }
 else{
+	if (htmlspecialchars($user->getAuthDomain() == 'gmail.com')){
+	//echo 'hello ' . htmlspecialchars($user->getNickname());
+	//echo '<br>';
+	//echo 'Your Domain ' . htmlspecialchars($user->getAuthDomain());
+
 	
 /*
 
@@ -304,3 +308,8 @@ switch (ENVIRONMENT)
  * And away we go...
  */
 require_once BASEPATH.'core/CodeIgniter.php';
+}
+else{
+	echo "The account you are using does not have permission to access this application";
+}
+}

@@ -64,10 +64,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '/cloudsql/emomentumintranet-1009:intranetdatabase',
+	'hostname' => 'localhost',//cloudsql/emomentumintranet-1009:intranetdatabase',
 	'username' => 'root',
 	'password' => '',
-	'database' => 'emomentum_intranet',
+	'database' => 'emomentum_framework',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

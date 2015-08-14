@@ -8,7 +8,7 @@ class Home_model extends CI_Model {
             parent::__construct(); //call the model contructor
         }
 	 function getNews(){
-			$query=$this->db->query("SELECT * FROM blog_topic  LIMIT 6");
+			$query=$this->db->query("SELECT * FROM blog_posts  LIMIT 6");
 		 
 		 if ($query->num_rows()> 0) {
 		 	
@@ -86,6 +86,13 @@ function delete_Event($id)
 {
    $this->db->where('postID', $id);
    $this->db->delete('blog_posts'); 
+}
+
+function update_Event($id,$data)
+{
+$this->db->where('postID',$id);
+$this->db->update('blog_posts',$data);
+
 }
 
 }

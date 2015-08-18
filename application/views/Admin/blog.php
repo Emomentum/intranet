@@ -16,8 +16,14 @@
                 <!-- /.col-lg-12 -->
             </div>
             <div class="row"> 
+            	<div class="col-lg-12">
+            	<?php echo $this->session->flashdata('success_update');?>
+            	<?php echo $this->session->flashdata('fail_new_blog');?>
+            	<?php echo $this->session->flashdata('success_delete');?>
+            	<?php echo $this->session->flashdata('fail_deletion');?>
+            	</div>
             	             <div class="col-lg-4">
-            	             	<a href="#" class="btn btn-primary btn-block">New Post</a><br>
+            	             	<a href="#newBlog" class="btn btn-primary btn-block" data-toggle="modal">New Post</a><br>
                     <div class="panel panel-default">
                         <div class="panel-heading">
                            <i class="fa fa-comment fa-fw"></i>Blog Topics
@@ -27,10 +33,7 @@
                             <div class="list-group">
                             	<?php foreach ($blogTopics as $topic):?>
                                 <div class="list-group-item" style = "padding-bottom:24px;">
-                                    <?=anchor('home','$topic->Topic');?>
-                                    <a href="#" class="pull-right text-muted small" style = "color: #05AA52;font-weight: 600;"><em>Edit</em></a><br>
-                                    <a href="#" class="pull-right text-muted small" style = "color: #F70039;font-weight: 600;"><em>Delete</em></a>
-                                   
+                                    <p><?=$topic->Topic;?></p> 
                                 </div>
                                 <? endforeach ?>
                             </div>
@@ -41,29 +44,97 @@
                 <!-- /.col-lg-4 -->
                 <div class="col-lg-8">
                     <div class="panel panel-default">
+                    	
                         <div class="panel-heading">
                             Topic Description
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <ul class="timeline">
-                                <li>
-                                    <div class="timeline-badge"><i class="fa fa-check"></i>
-                                    </div>
+                                    <?php foreach($blogTopicDescription as $description):?>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
-                                            <h4 class="timeline-title">Topic Name</h4>
-                                            <p><small class="text-muted"><i class="fa fa-clock-o"></i> 11 hours ago via Twitter</small>
-                                            </p>
+                                        	<div>
+                                            <h4 class="timeline-title"style = "float:left;"><?=$description->Topic ;?></h4>
+                                            <div class = "pull-right">
+                                            	<a href="#editBlog" class="text-muted small" data-toggle="modal" style = "color: #05AA52;font-weight: 600;"><em>Edit</em></a><br>
+                                            	<a href="#deleteBlogpost" class="text-muted small" data-toggle="modal" style = "color: #F70039;font-weight: 600;"><em>Delete</em></a>
+                                            </div>
+                                            </div>  
                                         </div>
-                                        <div class="timeline-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero laboriosam dolor perspiciatis omnis exercitationem. Beatae, officia pariatur? Est cum veniam excepturi. Maiores praesentium, porro voluptas suscipit facere rem dicta, debitis.</p>
+                                        <div class="timeline-body" style = "text-align:justify;padding-top:59px;">
+                                           <?=$description->details;?>
                                         </div>
                                     </div>
-                                </li>
-
-                          
-                            </ul>
+                                  
+										<!-- Edit Blog Modal HTML -->
+										<div id="editBlog" class="modal fade">
+										    <div class="modal-dialog">
+										        <div class="modal-content form-group" >
+										        	<?php echo form_open('Admin/UpdateBlog') ?>
+										            <div class="modal-header">
+										                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+										                <input class = "form-control" name = "topic" id= "topic" type = "Text" value = "<?=$description->Topic ;?>" required />
+										                <input type = "Text" name = "topicId" id = "topicId"value = "<?=$description->Blog_topic_id;?>" hidden/>
+										            </div>
+										            <div class="modal-body">
+										                <textarea name = "blogDescription" id = "blogDescription" style = "text-align:justify;" rows = "10" required class = "form-control"><?=$description->details;?></textarea>
+										               
+										            </div>
+										            <div class="modal-footer">
+										                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										                <input type="submit" class="btn btn-primary" value = "Save changes"/>
+										            </div>
+										           </form>
+										        </div>
+										    </div>
+										</div>
+										                       <!--delete post modal-->
+                        <div id="deleteBlogpost" class="modal fade">
+										    <div class="modal-dialog">
+										        <div class="modal-content form-group" >
+										        	<?php echo form_open('Admin/DeleteBlog') ?>
+										            <div class="modal-header">
+										                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+										           		<input type = "Text" name = "topicId" id = "topicId"value = "<?=$description->Blog_topic_id;?>" hidden/>
+										            </div>
+										            <div class="modal-body">
+										               <p>You are about to delete Blog post <?=$description->Topic?>.Proceed?</p>
+										               
+										            </div>
+										            <div class="modal-footer">
+										                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+										                <input type="submit" class="btn btn-primary" value = "Yes"/>
+										            </div>
+										           </form>
+										        </div>
+										    </div>
+										</div>
+                        <!-- end of delete post modal -->
+                                    <?php endforeach; ?> 
+                                           <!--new post modal-->
+                        <div id="newBlog" class="modal fade">
+										    <div class="modal-dialog">
+										        <div class="modal-content form-group" >
+										        	<?php echo form_open('Admin/newBlog') ?>
+										            <div class="modal-header">
+										                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+										                <input class = "form-control" name = "new_topic" id= "new_topic" type = "Text" required Placeholder = "Post Topic" /> 
+										            </div>
+										            <div class="modal-body">
+										                <textarea Placeholder = "Post Description" name = "new_Description" id = "new_Description" style = "text-align:justify;" rows = "10" required class = "form-control"></textarea>
+										                
+										               
+										            </div>
+										            <div class="modal-footer">
+										                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										                <input type="submit" class="btn btn-primary" value = "Save changes"/>
+										            </div>
+										           </form>
+										        </div>
+										    </div>
+										</div>
+                        <!-- end of new post modal -->
+           
                         </div>
                         <!-- /.panel-body -->
                     </div>

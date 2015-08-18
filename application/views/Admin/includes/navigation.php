@@ -261,29 +261,45 @@
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Departments<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Second Level Item</a>
+                                    <a href="#">Marketing Department</a>
                                 </li>
                                 <li>
-                                    <a href="#">Second Level Item</a>
+                                    <a href="#">Product Development</a>
                                 </li>
                                 <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-third-level -->
+                                    <a href="#">Consultancy</a>
                                 </li>
+                                <li>
+                                    <a href="#">Directors</a>
+                                </li>
+                                <li>
+                                    <a href="#">Finance</a>
+                                </li>
+                                <li>
+                                    <a href="#">Human Resource</a>
+                                </li>
+                                <li>
+                                    <a href="#">Development</a>
+                                </li>
+                                <li>
+                                    <a href="#">Projects</a>
+                                </li>
+                                <li>
+                                    <a href="#">Risk and Compliance</a>
+                                </li>
+                                <li>
+                                    <a href="#">Existing Business</a>
+                                </li>
+                                <li>
+                                    <a href="#">New Business</a>
+                                </li>
+                                <li>
+                                    <a href="#">Pre Sales</a>
+                                </li>
+                                <li>
+                                    <a href="#">Technical</a>
+                                </li>
+                                
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

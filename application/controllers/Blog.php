@@ -14,10 +14,6 @@ class Blog extends CI_Controller {
 		$data['topicComments'] = $this->blog_model->getComments($data['blogTopicDescription'][0]->Blog_topicID);
 		$data['breadcrum'] = "Blog";
 		$this->load->view('blog',$data);
-		// echo "<pre>";
-		// print_r($data['blogTopicDescription'][0]->Blog_topicID);
-		// echo "</pre>";
-		
 	}
 	function getTopic()
 	{

@@ -59,4 +59,33 @@ class Blog_model extends CI_model
         $this->db->insert('comments',$mycomment);
         return true;
     }
+	public function newblog($topic,$description){
+		 $data=array('Topic'=>$topic,'Blog_type_ID'=>5);
+		 if(empty($this->db->get_where('blog_topic',array('Topic ='=>$topic))->result())):
+			 $this->db->insert('blog_topic',$data);
+			 $newblogTopicId = $this->db->select('Blog_topicID')->from('blog_topic')->where(array('Topic ='=> $topic))->get()->result()[0]->Blog_topicID;
+			 $data2 = array('details'=>$description,'Blog_topic_id'=>$newblogTopicId); 
+		 	 $this->db->insert('blog_details',$data2);
+		 else:
+         return "Topic already exist";
+		 endif;
+	}
+	public function updateblog($id,$topic,$description)
+	{
+		$data = array('Topic'=>$topic);	
+		$this->db->where('Blog_topicID',$id)
+				->update('blog_topic',$data);
+		$data2=array('details'=>$description);
+        $this->db->where('Blog_topic_id',$id)
+              	 ->update('blog_details',$data2);
+		
+	}
+ public function deleteblog($id)
+    {
+	  $res = $this->db->delete('blog_topic', array('Blog_topicID' => $id));
+	  $res4 = $this->db->affected_rows();
+	  $res2 = $this->db->delete('blog_details', array('Blog_topic_id' => $id));
+	  $res3 = $this->db->delete('blog_comments', array('Blog_topic_ID' => $id));
+	 return $res4;	  
+    }
 }  

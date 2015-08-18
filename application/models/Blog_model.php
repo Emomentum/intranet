@@ -63,7 +63,8 @@ class Blog_model extends CI_model
 		 $data=array('Topic'=>$topic,'Blog_type_ID'=>5);
 		 if(empty($this->db->get_where('blog_topic',array('Topic ='=>$topic))->result())):
 			 $this->db->insert('blog_topic',$data);
-			 $newblogTopicId = $this->db->select('Blog_topicID')->from('blog_topic')->where(array('Topic ='=> $topic))->get()->result()[0]->Blog_topicID;
+			 $newblogTopicId = $this->db->select('Blog_topicID')->from('blog_topic')->where(array('Topic ='=> $topic))->get()
+			 							->result()[0]->Blog_topicID;
 			 $data2 = array('details'=>$description,'Blog_topic_id'=>$newblogTopicId); 
 		 	 $this->db->insert('blog_details',$data2);
 		 else:

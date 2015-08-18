@@ -17,6 +17,7 @@ class Home extends CI_Controller {
 	{
 		$this->load->model('Home_model');
 		$data['events']=$this->Home_model->getUpComingEvents();
+		$data['breadcrum'] = "Upcoming Events";
 		$this->load->view('includes/view_blog',$data);
 		
 }		
@@ -48,8 +49,9 @@ function communications()
 /*..............................................upcoming Events Blog......................................................*/
 function upcoming()
 {
+	$type=4;
 	$this->load->model('Home_model');
-	$data['upcoming']=$this->Home_model->getUpcomingEventNews();
+	$data['upcoming']=$this->Home_model->getUpcomingEventNews($type);
 	$this->load->view('Admin/upcoming',$data);
 }
 
@@ -90,28 +92,29 @@ function delete_page($id)
 function save_events()
 {	  	
 	$this->load->model('Home_model');
-	$data = array(
-			'postTitle' => $this->input->post('title'),
-			'postDesc' => $this->input->post('desc'),
-			'postCont' => $this->input->post('content'),
-			'postDate' => date('Y-m-d H:i:s') );
-	$this->Home_model->createPage($data);
+	
+	$postTitle = $this->input->post('title');
+	$postCont = $this->input->post('content');
+			
+	$this->Home_model->createPage($postTitle,$postCont);
+	
 	$data['message'] = 'Data Inserted Successfully';
 	$this->upcoming();
 
 }
 
 function update_events($id)
-{
-	//$id=$_GET['id'];  
+{ 
 	$this->load->model('Home_model');
-	$date=date('hgghfh');
-	$data = array(
-			'postTitle' => $this->input->post('title'),
-			'postDesc' => $this->input->post('desc'),
-			'postCont' => $this->input->post('content'),
-			'postDate' => date('Y-m-d H:i:s'));
-	$this->Home_model->update_Event($id,$data);
+	$topic= $this->input->post('title');
+	$description=$this->input->post('content');
+	$postDate = date('Y-m-d H:i:s');
+	// $data = array(
+			// 'postTitle' => $this->input->post('title'),
+			// 'postCont' => $this->input->post('content'),
+			// 'postDate' => date('Y-m-d H:i:s'));
+	
+	$this->Home_model->update_Event($id,$topic,$description,$postDate);
 	$data['message'] = 'Data Inserted Successfully';
 	$this->upcoming();
 

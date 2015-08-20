@@ -42,4 +42,11 @@ class Blog extends CI_Controller {
        print_r(json_encode($this->blog_model->getComments($topicId)));
        endif; 
 	 }	
+   public function setComment($topicid){
+   	
+	   $comment = $this->input->post("comment");
+	   $userEmail = $_SERVER['USER_EMAIL'];
+	  // $topicid = $this->input->post("topicid");
+      //$this->blog_model->setcomment($topicid,$comment,$userEmail);
+   }
 }

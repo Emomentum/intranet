@@ -89,4 +89,9 @@ class Blog_model extends CI_model
 	  $res3 = $this->db->delete('blog_comments', array('Blog_topic_ID' => $id));
 	 return $res4;	  
     }
+ public function setcomment($topicid,$comment,$useremail){
+ 	$data = array('Comments'=>$comment,'Email'=>$useremail,'Blog_topic_ID'=>$topicid);
+ 	$this->db->insert('blog_comments',$data);
+	
+ }
 }  

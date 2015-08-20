@@ -30,26 +30,16 @@ class Home_model extends CI_Model {
 		 }
 		}
 	 
-	 	 function getUpComingEvents(){
-	 	 	
-	 	 	// $query =$this->db->query('SELECT * FROM blog_posts ORDER BY postID DESC');
-// 	
-// 		 
-		 // if ($query->num_rows()> 0) {
-// 		 	
-		 	// return $query->result(); //return an array of objects
-// 			 
-		 // } else {
-			 // return NULL;
-		 // }
-		$this->db->select('*');
-		$this->db->from('blog_details');
-		//$this->db->where(array('Blog_topic_id ='=> $topicid));
-		$this->db->join('blog_topic','blog_topic.Blog_topicID = blog_details.Blog_topic_id');
-	    //$this->db->limit(1);
-		$result = $this->db->get();
-        return $result->result();
-		}
+	 	 // function getUpComingEvents(){
+// 	 	 	
+		// $this->db->select('*');
+		// $this->db->from('blog_details');
+		// //$this->db->where(array('Blog_topic_id ='=> $topicid));
+		// $this->db->join('blog_topic','blog_topic.Blog_topicID = blog_details.Blog_topic_id');
+	    // //$this->db->limit(1);
+		// $result = $this->db->get();
+        // return $result->result();
+		// }
 		 
 		 function getEvent($id){
 	 	 	
@@ -62,10 +52,6 @@ class Home_model extends CI_Model {
         return $result->result();
 		}
 	 
-    
-	 
-    
-/*.....................................................Admin section.............................................*/
      
      function getUpcomingEventNews($type){
 
@@ -80,8 +66,9 @@ class Home_model extends CI_Model {
 	 
 	
 	 
-function createPage($postTitle,$postCont){
-	 $data=array('Topic'=>$postTitle,'Blog_type_ID'=>4);
+function createPage($postTitle,$postCont,$type){
+	
+	 $data=array('Topic'=>$postTitle,'Blog_type_ID'=>$type);
 		 if(empty($this->db->get_where('blog_topic',array('Topic ='=>$postTitle))->result())):
 			 $this->db->insert('blog_topic',$data);
 			 

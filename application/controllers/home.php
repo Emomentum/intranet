@@ -6,8 +6,9 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('Home_model');		
-		$data['content']=$this->Home_model->getNews();
-		$data['events']=$this->Home_model->getUpComingEvents();
+		$data['announcement']=$this->Home_model->getUpcomingEventNews($type=1);
+		$data['communications']=$this->Home_model->getUpcomingEventNews($type=2);
+		$data['events']=$this->Home_model->getUpcomingEventNews($type=4);
 		$data['breadcrum'] = "Home";
 		$this->load->view('home',$data);
 		
@@ -15,16 +16,18 @@ class Home extends CI_Controller {
 	
 	function upcoming_events()
 	{
+		$type=4;
 		$this->load->model('Home_model');
-		$data['events']=$this->Home_model->getUpComingEvents();
+		$data['events']=$this->Home_model->getUpcomingEventNews($type);
 		$data['breadcrum'] = "Upcoming Events";
 		$this->load->view('includes/view_blog',$data);
 		
 }		
 	function single_events($id){
-		//$id=$_GET['id'];
+		
 		$this->load->model('Home_model');
 		$data['event']=$this->Home_model->getEvent($id);
+		$data['breadcrum'] = "Upcoming Event";
 		$this->load->view('includes/single_event',$data);
 		
 }					
@@ -37,12 +40,18 @@ function slider()
 
 function announcement()
 {
-	
+	$type=1;
+	$this->load->model('Home_model');
+	$data['upcoming']=$this->Home_model->getUpcomingEventNews($type);
+	$this->load->view('Admin/upcoming',$data);
 }
 
 function communications()
 {
-	
+	$type=2;
+	$this->load->model('Home_model');
+	$data['upcoming']=$this->Home_model->getUpcomingEventNews($type);
+	$this->load->view('Admin/upcoming',$data);
 }
 
 
@@ -89,14 +98,14 @@ function delete_page($id)
 	$this->upcoming();
 }
 
-function save_events()
+function save_events($type)
 {	  	
 	$this->load->model('Home_model');
 	
 	$postTitle = $this->input->post('title');
 	$postCont = $this->input->post('content');
 			
-	$this->Home_model->createPage($postTitle,$postCont);
+	$this->Home_model->createPage($postTitle,$postCont,$type);
 	
 	$data['message'] = 'Data Inserted Successfully';
 	$this->upcoming();

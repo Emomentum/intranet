@@ -56,14 +56,13 @@
                        
                           <!-- List group -->
   <ul class="list-group">
-  	<?php	
-	foreach ($content as $object ) {
+   <?php
+    	
+	foreach ($announcement as $object ) {
 		
-		//$title= $object->Topic;
-		$title= $object->postTitle;
-		//$id=$object->Blog_topicID;
-		$id=$object->postID;
-        $topic= anchor('home/upcoming_events?id='.$id.'',''.$title.'');
+		$title= $object->Topic;
+		$id=$object->Blog_topic_id;
+        $topic= anchor('home/single_events/'.$id.'',''.$title.'');
 	
 	   echo '<li class="list-group-item">'.$topic.'</li>';   
 	
@@ -150,12 +149,11 @@
   <ul class="list-group">
     <?php
     	
-	foreach ($events as $object ) {
+	foreach ($communications as $object ) {
 		
-		$title= $object->postTitle;
-		$title= $object->postTitle;
-		$id=$object->postID;
-        $topic= anchor('home/single_events?id='.$id.'',''.$title.'');
+		$title= $object->Topic;
+		$id=$object->Blog_topic_id;
+        $topic= anchor('home/single_events/'.$id.'',''.$title.'');
 	
 	   echo '<li class="list-group-item">'.$topic.'</li>';   
 	
@@ -175,9 +173,9 @@
     	
 	foreach ($events as $object ) {
 		
-		$title= $object->postTitle;
-		$title= $object->postTitle;
-		$id=$object->postID;
+		$title= $object->Topic;
+		//$title= $object->details;
+		$id=$object->Blog_topic_id;
         $topic= anchor('home/single_events/'.$id.'',''.$title.'');
 	
 	   echo '<li class="list-group-item">'.$topic.'</li>';   

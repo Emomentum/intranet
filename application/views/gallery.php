@@ -1,6 +1,8 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php 
 	$this->load->view('includes/header');
 ?>
@@ -17,12 +19,12 @@
 </title>
 
 <!-- start gallery header --> 
-<link rel="stylesheet" type="text/css" href="http://localhost/Ci/assets/folio-gallery.css"/>
-<script type="text/javascript" src="http://localhost/Ci/assets/js/jquery-1.9.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/bgallery.css"/>
+<script type="text/javascript" src="<?=base_url()?>assets/js/jquery-1.9.1.min.js"></script>
 
-<link rel="stylesheet" type="text/css" href="http://localhost/Ci/assets/colorbox/colorbox.css" />
+<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/colorbox/colorbox.css" />
 <!--<link rel="stylesheet" type="text/css" href="fancybox/fancybox.css" />-->
-<script type="text/javascript" src="http://localhost/Ci/assets/colorbox/jquery.colorbox-min.js"></script>
+<script type="text/javascript" src="<?=base_url()?>assets/colorbox/jquery.colorbox-min.js"></script>
 <!--<script type="text/javascript" src="fancybox/jquery.fancybox-1.3.1.min.js"></script>-->
 <script type="text/javascript">
 $(document).ready(function() {	
@@ -49,7 +51,9 @@ $(document).ready(function() {
 
 <div class="gallery"> 
 <?php
- $this->load->view('folio-gallery');
+  $this->load->view('bgallery');
+ //include('http://localhost/Ci/assets/folio-gallery.php')
+  // include "assets/folio-gallery.php";
  ?>
 </div>   
 

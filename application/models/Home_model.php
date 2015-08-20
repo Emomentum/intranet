@@ -7,41 +7,8 @@ class Home_model extends CI_Model {
 	  function __construct() {
             parent::__construct(); //call the model contructor
         }
-	 function getNews(){
-			$query=$this->db->query("SELECT * FROM blog_posts  LIMIT 6");
 		 
-		 if ($query->num_rows()> 0) {
-		 	
-		 	return $query->result(); //return an array of objects
-			 
-		 } else {
-			 return NULL;
-		 }
-		}
-	 function getNewsdetails($id){
-			$query=$this->db->query("SELECT * FROM blog_details where Blog_topic_id='$id'");
-		 
-		 if ($query->num_rows()> 0) {
-		 	
-		 	return $query->result(); //return an array of objects
-			 
-		 } else {
-			 return NULL;
-		 }
-		}
-	 
-	 	 // function getUpComingEvents(){
-// 	 	 	
-		// $this->db->select('*');
-		// $this->db->from('blog_details');
-		// //$this->db->where(array('Blog_topic_id ='=> $topicid));
-		// $this->db->join('blog_topic','blog_topic.Blog_topicID = blog_details.Blog_topic_id');
-	    // //$this->db->limit(1);
-		// $result = $this->db->get();
-        // return $result->result();
-		// }
-		 
-		 function getEvent($id){
+	function getEvent($id){
 	 	 	
 	 	$this->db->select('*');
 		$this->db->from('blog_topic');

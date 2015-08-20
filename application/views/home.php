@@ -59,7 +59,7 @@
    <?php
     	
 	foreach ($announcement as $object ) {
-		
+		$type=1;
 		$title= $object->Topic;
 		$id=$object->Blog_topic_id;
         $topic= anchor('home/single_events/'.$id.'',''.$title.'');
@@ -68,7 +68,7 @@
 	
 	}
 	?>
-<li class="list-group-item"> <?php echo anchor('home/upcoming_events','View All')?> </li> 
+<li class="list-group-item"> <?php echo anchor('home/upcoming_events/'.$type.'','View All')?> </li> 
   
               
   </ul>
@@ -150,7 +150,7 @@
     <?php
     	
 	foreach ($communications as $object ) {
-		
+		$type=2;
 		$title= $object->Topic;
 		$id=$object->Blog_topic_id;
         $topic= anchor('home/single_events/'.$id.'',''.$title.'');
@@ -159,7 +159,7 @@
 	
 	}
 	?>
-<li class="list-group-item"> <?php echo anchor('home/upcoming_events','View All')?> </li> </ul>
+<li class="list-group-item"> <?php echo anchor('home/upcoming_events/'.$type.'','View All')?> </li> </ul>
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel --></div>
@@ -172,7 +172,7 @@
      <?php
     	
 	foreach ($events as $object ) {
-		
+		$type=4;
 		$title= $object->Topic;
 		//$title= $object->details;
 		$id=$object->Blog_topic_id;
@@ -182,7 +182,7 @@
 	
 	}
 	?>
-<li class="list-group-item"> <?php echo anchor('home/upcoming_events','View All')?> </li> 
+<li class="list-group-item"> <?php echo anchor('home/upcoming_events/'.$type.'','View All')?> </li> 
 </ul>
                         <!-- /.panel-body -->
                     </div>

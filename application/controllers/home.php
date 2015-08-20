@@ -14,15 +14,15 @@ class Home extends CI_Controller {
 		
 	}	
 	
-	function upcoming_events()
+	function upcoming_events($type)
 	{
-		$type=4;
 		$this->load->model('Home_model');
 		$data['events']=$this->Home_model->getUpcomingEventNews($type);
 		$data['breadcrum'] = "Upcoming Events";
 		$this->load->view('includes/view_blog',$data);
 		
 }		
+
 	function single_events($id){
 		
 		$this->load->model('Home_model');
@@ -31,16 +31,12 @@ class Home extends CI_Controller {
 		$this->load->view('includes/single_event',$data);
 		
 }					
-					
-/*..............................................Codes for admin section......................................................*/
-function slider()
-{
-	
-}
+				
 
 function announcement()
 {
 	$type=1;
+	$data['type']=$type;
 	$this->load->model('Home_model');
 	$data['upcoming']=$this->Home_model->getUpcomingEventNews($type);
 	$this->load->view('Admin/upcoming',$data);
@@ -49,38 +45,38 @@ function announcement()
 function communications()
 {
 	$type=2;
+	$data['type']=$type;
 	$this->load->model('Home_model');
 	$data['upcoming']=$this->Home_model->getUpcomingEventNews($type);
 	$this->load->view('Admin/upcoming',$data);
 }
 
-
-/*..............................................upcoming Events Blog......................................................*/
 function upcoming()
 {
 	$type=4;
+	$data['type']=$type;
 	$this->load->model('Home_model');
 	$data['upcoming']=$this->Home_model->getUpcomingEventNews($type);
 	$this->load->view('Admin/upcoming',$data);
 }
 
-function create_events()
-{	
-	$this->load->view('Admin/includes/create_page');
-
+function create_events($type)
+{
+	$data['type']=$type;	
+	$this->load->view('Admin/includes/create_page',$data);
 }
 
-function viewpage($id)
+function viewpage($id,$type)
 {
-	//$id=$_GET['id'];
+	$data['type']=$type;
 	$this->load->model('Home_model');
 	$data['upcoming']=$this->Home_model->getEvent($id);
 	$this->load->view('Admin/includes/viewpage',$data);
 }
 
-function edit_page($id)
+function edit_page($id,$type)
 {
-	//$id=$_GET['id'];
+	$data['type']=$type;
 	$this->load->model('Home_model');
 	$this->Home_model->getEvent($id);
 	$data['edit_page']=$this->Home_model->getEvent($id);
@@ -88,14 +84,12 @@ function edit_page($id)
 	
 }
 
-function delete_page($id)
+function delete_page($id,$type)
 {
-	//$id=$_GET['id'];
 	$this->load->model('Home_model');
 	$this->Home_model->delete_Event($id);
 	$data['action']='Deleted';
-	//$this->load->view('Admin/includes/upcoming',$data);
-	$this->upcoming();
+	$this->callPage($type);
 }
 
 function save_events($type)
@@ -108,26 +102,30 @@ function save_events($type)
 	$this->Home_model->createPage($postTitle,$postCont,$type);
 	
 	$data['message'] = 'Data Inserted Successfully';
-	$this->upcoming();
+	$this->callPage($type);
 
 }
 
-function update_events($id)
+function update_events($id,$type)
 { 
 	$this->load->model('Home_model');
 	$topic= $this->input->post('title');
 	$description=$this->input->post('content');
 	$postDate = date('Y-m-d H:i:s');
-	// $data = array(
-			// 'postTitle' => $this->input->post('title'),
-			// 'postCont' => $this->input->post('content'),
-			// 'postDate' => date('Y-m-d H:i:s'));
-	
 	$this->Home_model->update_Event($id,$topic,$description,$postDate);
 	$data['message'] = 'Data Inserted Successfully';
-	$this->upcoming();
+	$this->callPage($type);
 
 }
-
+function callPage($type)
+{
+	if ($type==1) {
+		$this->announcement();
+	} else if ($type==2) {
+		$this->communications();
+	} else if ($type==4) {
+		$this->upcoming();
+	}
+}
 
 }

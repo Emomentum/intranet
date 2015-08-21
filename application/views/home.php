@@ -213,6 +213,6 @@ $shown_string = implode(" ", $words);
 
    </div>
   </div>
-  </div>
+ 
 <?php $this->load->view('includes/footer');?>
 </body></html>

@@ -1,5 +1,6 @@
-<!----------------Header------------->
-<div class=""style="width:90%margin-left: auto;margin-right: auto;">
+
+	<!----------------Header------------->
+<div class=""style="width:90%;margin-left: auto;margin-right: auto;background-color: #fff;border:1px solid #ccc">
 <header>
 
 <div class="top-header">
@@ -23,11 +24,10 @@
 
 </div>
 
-
+<nav class="navbar navbar-default navigation" role="navigation">
+	
 <div class="container">
 <div class="row">
-
-<nav class="navbar navbar-default navigation" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
 
     <div class=" main-nav">

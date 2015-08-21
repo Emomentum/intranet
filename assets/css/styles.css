@@ -2,6 +2,7 @@ body
 {
 font-size:14px;
 font-family:georgia;
+background-color: #ddd;
 }
 header
 {
@@ -72,7 +73,7 @@ margin-top:25px;
   filter: alpha(opacity=50);
   opacity: .5;
     }
-.carousel-control.left, .carousel-control.right,{
+.carousel-control.left, .carousel-control.right{
     background-image: none no-repeat important!;
     }
 .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-prev, .carousel-control .icon-next {

@@ -10,6 +10,7 @@ class Home extends CI_Controller {
 		$data['communications']=$this->Home_model->getUpcomingEventNews($type=2);
 		$data['events']=$this->Home_model->getUpcomingEventNews($type=4);
 		$data['breadcrum'] = "Home";
+		//$data = array('active_state_home'=>'active_state','active_state_department'=>'blank','active_state_gallery'=>'blank','active_state_blog'=>'blank');
 		$this->load->view('home',$data);
 		
 	}	

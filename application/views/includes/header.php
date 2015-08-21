@@ -52,30 +52,29 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
 
-        <div class="nav-holder collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="nav-holder collapse navbar-collapse" id="bs-example-navbar-collapse-1" style = "padding:0px">
 
             <ul class="nav navbar-nav">
-
-            <li class="active hide"><a href="#brand"></a></li>
-
-            <li><?php echo anchor('home','HOME')?></li>
-            <li>
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle">DEPARTMENTS<b class="caret"></b></a>
-				<ul class="dropdown-menu">
-					<li><a href="#">Business analytics</a></li>
-					<li><a href="#">Web development</a></li>
-					<li><a href="#">Information security</a></li>
-					<li><a href="#">Consultancy services</a></li>
-					<li><a href="#">Servers and cloud platforms</a></li>
-					<li><a href="#">Network management</a></li>
-					<li><a href="#">Support and deployment services</a></li>
-					<li><a href="#">Collaboration</a></li>
-					<li><a href="#">Client relationship management</a></li>
-				</ul>
-            </li>
-            <li><?php echo anchor('gallery','GALLERY')?></li>
-            <li><?php echo anchor('products','PRODUCTS')?></li>
-            <li><?php echo anchor('blog','BLOG')?></li>
+           		 <li><?php echo anchor('home','Home')?></li>
+           		 <li><a href="#" data-toggle="dropdown" class="dropdown-toggle">Departments<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Marketing Development</a></li>
+						<li><a href="#">Product Development</a></li>
+						<li><a href="#">Directors</a></li>
+						<li><a href="#">Consultancy</a></li>
+						<li><a href="#">Development</a></li>
+						<li><a href="#">Finance</a></li>
+						<li><a href="#">Human Resource</a></li>
+						<li><a href="#">Projects</a></li>
+						<li><a href="#">Risk and Compliance</a></li>
+						<li><a href="#">Existing Business</a></li>
+						<li><a href="#">New Business</a></li>
+						<li><a href="#">Pre-sales</a></li>
+						<li><a href="#">Technical Team</a></li>
+					</ul>
+           		 </li>
+               <li><?php echo anchor('gallery','Gallery')?></li>
+               <li><?php echo anchor('blog','Blog')?></li>
             </ul>
 
         </div>

@@ -1,6 +1,7 @@
 body
 {
 font-size:14px;
+font-family:georgia;
 }
 header
 {
@@ -36,7 +37,20 @@ background-color: #001060;
 }
 .navbar-default .navbar-nav>li>a
 {
-color:#fff;
+	color:#fff;
+    font-size: 17px;
+    padding-right: 38px;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
+	color:#00A94F;
+}
+.navbar-default .navbar-nav>.active_state>a
+{
+	color:#00A94F;
+}
+.active_state> a
+{
+	color:#00A94F;
 }
 .breadcrumb
 {

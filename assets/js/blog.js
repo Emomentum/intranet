@@ -88,14 +88,17 @@ $('input.newCmt').click(function(){
 			cache:false,
 			data:{"comment":newcomment},
 			success:function(result){
-				if(comment.innerHTML == "<p>No Comments Available</p><hr style ='color: #07AA53;border: dotted 1px;'>"){
-					comment.innerHTML = "<p>"+newcomment+"</p><p style='font-size:9px;margin: 10px 0 10px;color: #07AB54;'>Author : "+useremail+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Posted on : "+ datetime + "</p><hr style ='color: #07AA53;border: dotted 1px;'>";
-					$('textarea#comments').val("");
+				console.log(comment.innerHTML);
+				if(comment.innerHTML != '<p>No Comments Available</p><hr style="color: #07AA53;border: dotted 1px;">')
+				{
+				comment.innerHTML = comment.innerHTML+"<p>"+newcomment+"</p><p style='font-size:9px;margin: 10px 0 10px;color: #07AB54;'>Author : "+useremail+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Posted on : "+ datetime + "</p><hr style ='color: #07AA53;border: dotted 1px;'>";
+				$('textarea#comments').val("");
 				}
 				else
 				{
-					comment.innerHTML = comment.innerHTML+"<p>"+newcomment+"</p><p style='font-size:9px;margin: 10px 0 10px;color: #07AB54;'>Author : "+useremail+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Posted on : "+ datetime + "</p><hr style ='color: #07AA53;border: dotted 1px;'>";
+				comment.innerHTML = "<p>"+newcomment+"</p><p style='font-size:9px;margin: 10px 0 10px;color: #07AB54;'>Author : "+useremail+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Posted on : "+ datetime + "</p><hr style ='color: #07AA53;border: dotted 1px;'>";
 				$('textarea#comments').val("");
+					
 				}
 	},
 			error:function(msg){

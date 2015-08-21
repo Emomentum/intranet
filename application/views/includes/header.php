@@ -1,5 +1,5 @@
 <!----------------Header------------->
-<div class="container">
+<div class=""style="width:90%margin-left: auto;margin-right: auto;">
 <header>
 
 <div class="top-header">
@@ -23,14 +23,14 @@
 
 </div>
 
-<nav class="navbar navbar-default navigation" role="navigation">
+
 <div class="container">
 <div class="row">
 
-
+<nav class="navbar navbar-default navigation" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
 
-    <div class="container main-nav">
+    <div class=" main-nav">
 
         <div class="navbar-header">
 

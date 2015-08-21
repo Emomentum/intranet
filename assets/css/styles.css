@@ -167,7 +167,6 @@ border-radius:0px;
 .list-group-item {
     background-color: transparent;
     border: 1px solid #fff;
-	padding: 20px 15px;
 }
 .list-group-item>a {
  color:#000;
@@ -175,4 +174,9 @@ border-radius:0px;
 .footer
 {
 text-align: center;
+}
+.online-processes
+{
+	width:50px;
+	margin-right: 10px;
 }

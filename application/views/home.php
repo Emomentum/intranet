@@ -10,46 +10,14 @@
 	$this->load->view('includes/breadcrum');
 ?>
 
+    						 	
 <!----------------service------------->
  
 <div class="services" id="services">
     <div class="container">
     <div class="row">
-    <div class="col-lg-5 service" id="service1" >
-    	<div class="panel panel-default" style="min-height: 550px;">
-                        <div class="panel-heading">
-                            Vision And Mission
-							</div>
-                        <div class="panel-body">
-
-          <h3>Our Mission</h3>
-          <p align="justify">
-           </p><ul><li> Make a difference in our customers unique environments</li>
-                <li> Leverage on our partners and our methodology</li>
-                <li>Provide  innovative and transformative technology</li>
-                 <li>Exceed our stakeholders� expectations.</li></ul> <p></p>
-  
-          <h3>Our Vision </h3>
-  
-          <p align="justify">To be a trusted technology services and solutions partner of choice.</p>
-  
-          <h3>Our Methodology </h3>
-  
-          <p align="justify">The E.I.N.S.T.E.I.N.S methodology is designed to deliver value by addressing all areas of the business with very 
-                    meticulous eye. The methodology has five phases namely:</p>
-                    <ul>
-                    <li>Initiate</li>
-                    <li>Build</li>
-                    <li>Develop</li>
-                    <li>Implement</li>
-                    <li>Review</li>
-                    </ul>
-                            
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel --></div>
-					 <div class="col-lg-4  service" id="service1"><div class="panel panel-default"  style="min-height: 550px;">
+    						 <div class="col-lg-4  service" id="service1">
+    						 	<div class="panel panel-default">
                         <div class="panel-heading">
                             Announcement
                         </div>
@@ -62,39 +30,139 @@
 		$type=1;
 		$title= $object->Topic;
 		$id=$object->Blog_topic_id;
+		$details= $object->details;
         $topic= anchor('home/single_events/'.$id.'',''.$title.'');
+		$readmore=anchor('home/single_events/'.$id.'','Read More',array('style'=>'color:green'));
 	
-	   echo '<li class="list-group-item">'.$topic.'</li>';   
+	  
+	  $string = strip_tags($details);
+
+if (strlen($string) > 100) {
+
+    // truncate string
+    $stringCut = substr($string, 0, 99);
+
+    // make sure it ends in a word so assassinate doesn't become ass...
+    $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'... '.$readmore.''; 
+}
+	
+	   echo '<li class="list-group-item" ><div style="color: #222;font-size: 18px;font-weight: bold;padding-bottom: 1px;">'.$topic.'</div><br />';  
+	    echo '<p><img src="'.base_url().'assets/images/online_processes/ann.png" class="online-processes" align="left">'.$string.'</p></li>';      
 	
 	}
 	?>
-<li class="list-group-item"> <?php echo anchor('home/upcoming_events/'.$type.'','View All')?> </li> 
+<li class="list-group-item"> <?php echo anchor('home/upcoming_events/'.$type.'','View All',array('style'=>'color:green'))?> </li> 
   
               
   </ul>
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel --></div>
-					 <div class="col-lg-3 service" id="service1"><div class="panel panel-default" style="min-height: 550px;">
+                    
+    <div class="col-lg-4 service" id="service1"><div class="panel panel-default">
+                        <div class="panel-heading">
+                            Communications
+                        </div>
+                        <!-- List group -->
+  <ul class="list-group">
+    <?php
+    	
+	foreach ($communications as $object ) {
+		$type=2;
+		$title= $object->Topic;
+		$id=$object->Blog_topic_id;
+		$details= $object->details;
+        $topic= anchor('home/single_events/'.$id.'',''.$title.'');		
+		$readmore=anchor('home/single_events/'.$id.'','Read More',array('style'=>'color:green'));
+	
+
+$string = strip_tags($details);
+
+if (strlen($string) > 100) {
+
+    // truncate string
+    $stringCut = substr($string, 0, 99);
+
+    // make sure it ends in a word so assassinate doesn't become ass...
+    $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'... '.$readmore.''; 
+}
+	
+	   echo '<li class="list-group-item" ><div style="color: #222;font-size: 18px;font-weight: bold;padding-bottom: 1px;">'.$topic.'</div><br />';  
+	    echo '<p><img src="'.base_url().'assets/images/online_processes/com.png" class="online-processes" align="left">'.$string .'</p></li>';   
+	
+	}
+	?>
+</ul><?php echo anchor('home/upcoming_events/'.$type.'','View All',array('style'=>'color:green'))?> 
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel --></div>
+
+					 <div class="col-lg-4 service" id="service1">
+					 	
+					 	
+					 	
+<div class="panel panel-default" >
                         <div class="panel-heading">
                             Online Processes
                         </div>
                           <!-- List group -->
   <ul class="list-group">
-    <li class="list-group-item">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Morbi leo risus</li>
-    <li class="list-group-item">Porta ac consectetur ac</li>
-    <li class="list-group-item">Vestibulum at eros</li>
+    <li class="list-group-item"><a href="#"><img src="<?php echo base_url()?>assets/images/online_processes/crm.png" class="online-processes">Suger CRM</a></li>
+    <li class="list-group-item"><a href="#"><img src="<?php echo base_url()?>assets/images/online_processes/zoho.png" class="online-processes">Zoho people</a></li>
+    <li class="list-group-item"><a href="#"><img src="<?php echo base_url()?>assets/images/online_processes/pm.png" class="online-processes">ProjectManager.com</a></li>
+    <li class="list-group-item"><a href="#"><img src="<?php echo base_url()?>assets/images/online_processes/fresh.png" class="online-processes">Fresh Desk</a></li>
+    <li class="list-group-item"><a href="#"><img src="<?php echo base_url()?>assets/images/online_processes/chimp.png" class="online-processes">Mail Chimp</a></li>
+    <li class="list-group-item"><a href="#"><img src="<?php echo base_url()?>assets/images/online_processes/quickbooks.png" class="online-processes">Quick books</a></li>
+    <li class="list-group-item"><a href="#"><img src="<?php echo base_url()?>assets/images/online_processes/crm.png" class="online-processes">websites</a></li>
   </ul>
                             
                         <!-- /.panel-body -->
                     </div>
+                    
+            
+            <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Upcoming Events
+                        </div>
+                        <!-- List group -->
+  <ul class="list-group">
+     <?php
+		
+		
+		
+	foreach ($events as $object ) {
+		$type=4;
+		$title= $object->Topic;
+		$details= $object->details;
+		$id=$object->Blog_topic_id;
+        $topic= anchor('home/single_events/'.$id.'',''.$title.'');
+		
+$num_words = 31;
+$words = array();
+$words = explode(" ", $details, $num_words);
+$shown_string = "";
+
+if(count($words) == 31){
+   $words[30] = " ... ";
+}
+
+$shown_string = implode(" ", $words);
+	
+	   echo '<li class="list-group-item" >'.$topic.'<br />';  
+	    echo '</li>';  
+	
+	}
+	?>
+<li class="list-group-item"> <?php echo anchor('home/upcoming_events/'.$type.'','View All',array('style'=>'color:green'))?> </li> 
+</ul>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel --></div>
                     <!-- /.panel --></div>
    </div>
   </div>
   </div>
-  
+<hr />  
 <div class="container" style="margin-bottom: 35px;">
 <div class="row">
 <div class="col-md-12" >
@@ -141,52 +209,8 @@
 <div class="services" id="services">
     <div class="container" >
     <div class="row">
-    <div class="col-lg-6 service" id="service1"><div class="panel panel-default">
-                        <div class="panel-heading">
-                            Communications
-                        </div>
-                        <!-- List group -->
-  <ul class="list-group">
-    <?php
-    	
-	foreach ($communications as $object ) {
-		$type=2;
-		$title= $object->Topic;
-		$id=$object->Blog_topic_id;
-        $topic= anchor('home/single_events/'.$id.'',''.$title.'');
-	
-	   echo '<li class="list-group-item">'.$topic.'</li>';   
-	
-	}
-	?>
-<li class="list-group-item"> <?php echo anchor('home/upcoming_events/'.$type.'','View All')?> </li> </ul>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel --></div>
-					 <div class="col-lg-6  service" id="service1"><div class="panel panel-default">
-                        <div class="panel-heading">
-                            Upcoming Events
-                        </div>
-                        <!-- List group -->
-  <ul class="list-group">
-     <?php
-    	
-	foreach ($events as $object ) {
-		$type=4;
-		$title= $object->Topic;
-		//$title= $object->details;
-		$id=$object->Blog_topic_id;
-        $topic= anchor('home/single_events/'.$id.'',''.$title.'');
-	
-	   echo '<li class="list-group-item">'.$topic.'</li>';   
-	
-	}
-	?>
-<li class="list-group-item"> <?php echo anchor('home/upcoming_events/'.$type.'','View All')?> </li> 
-</ul>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel --></div>
+
+
    </div>
   </div>
   </div>

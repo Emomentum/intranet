@@ -161,7 +161,7 @@ $shown_string = implode(" ", $words);
                     <!-- /.panel --></div>
    </div>
   </div>
-  </div>
+ 
 <hr />  
 <div class="container" style="margin-bottom: 35px;">
 <div class="row">
@@ -213,6 +213,6 @@ $shown_string = implode(" ", $words);
 
    </div>
   </div>
- 
+  </div>
 <?php $this->load->view('includes/footer');?>
 </body></html>

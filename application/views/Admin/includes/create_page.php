@@ -2,6 +2,13 @@
 <html lang="en">
 
 <head>
+	<script>
+		if($type==4){
+			
+			document.getElementByName('dates').removeAttribute('hidden');
+		}
+		document.getElementByName('dates').setAttribute("hidden", "true");
+	</script>
 <?php $this->load->view('Admin/includes/header');?>
 </head>
 <body>
@@ -37,7 +44,15 @@
 
  <div class="form-group">
   <label>Page Title</label>
- <input name="title" class="form-control" >
+ <input name="title" class="form-control">
+</div >
+ <div class="form-group" name="dates" type="hidden">
+  <label>Start Date</label>
+ <input id="start" name="title" class="form-control" >
+</div>
+ <div class="form-group" name="dates">
+  <label>End Date</label>
+ <input id="end" name="title" class="form-control" >
 </div>
 
 

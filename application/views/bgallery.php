@@ -73,9 +73,9 @@ if (!isset($_GET['album'])) {
 	$albums = array();
 	$captions = array();
 	$random_pics = array();
+	  
     foreach($folders as $album) {
          
-		 
 	    if(!in_array($album, $ignore)) {    
 			 
 		   array_push( $albums, $album );
@@ -157,6 +157,7 @@ if (!isset($_GET['album'])) {
    
 
 } else {
+	$bryan='assets/albums';
 
      // display photos in album
     $src_folder = $mainFolder.'/'.$_GET['album'];
@@ -211,7 +212,7 @@ if (!isset($_GET['album'])) {
    $start = ( $currentPage * $itemsPerPage ) - $itemsPerPage;
 
    echo '<div class="titlebar">
-           <div class="float-left"><span class="title">'. $_GET['album'] .'</span> - <a href="'.$_SERVER['PHP_SELF'].'">View All Albums</a></div>
+           <div class="float-left"><span class="title">'. $_GET['album'] .'</span> - <a href="http://localhost/Ci/gallery">View All Albums</a></div>
            <div class="float-right">'.count($files).' images</div>
          </div>';	  
    echo '<div class="clear"></div>';

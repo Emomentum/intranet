@@ -18,7 +18,7 @@ class Home extends CI_Controller {
 	function upcoming_events($type)
 	{
 		$this->load->model('Home_model');
-		$data['events']=$this->Home_model->getUpcomingEventNews($type);
+		$data['events']=$this->Home_model->getAllUpcomingEventNews($type);
 		$data['breadcrum'] = "Upcoming Events";
 		$this->load->view('includes/view_blog',$data);
 		
@@ -39,7 +39,7 @@ function announcement()
 	$type=1;
 	$data['type']=$type;
 	$this->load->model('Home_model');
-	$data['upcoming']=$this->Home_model->getUpcomingEventNews($type);
+	$data['upcoming']=$this->Home_model->getAllUpcomingEventNews($type);
 	$this->load->view('Admin/upcoming',$data);
 }
 
@@ -48,7 +48,7 @@ function communications()
 	$type=2;
 	$data['type']=$type;
 	$this->load->model('Home_model');
-	$data['upcoming']=$this->Home_model->getUpcomingEventNews($type);
+	$data['upcoming']=$this->Home_model->getAllUpcomingEventNews($type);
 	$this->load->view('Admin/upcoming',$data);
 }
 
@@ -57,7 +57,7 @@ function upcoming()
 	$type=4;
 	$data['type']=$type;
 	$this->load->model('Home_model');
-	$data['upcoming']=$this->Home_model->getUpcomingEventNews($type);
+	$data['upcoming']=$this->Home_model->getAllUpcomingEventNews($type);
 	$this->load->view('Admin/upcoming',$data);
 }
 

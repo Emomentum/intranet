@@ -134,9 +134,7 @@ if (strlen($string) > 100) {
             <div class="caption">
 
 
-            <h1>< ?php
-include("http://quotes.rationalmind.net/random.php");
-?>"Dont be the same, be better"</h1>
+            <h1>"Dont be the same, be better"</h1>
 
             </div>
 

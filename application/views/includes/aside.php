@@ -31,7 +31,7 @@
 		
 		
 		
-	foreach ($events as $object ) {
+	foreach ($upcoming as $object ) {
 		$type=4;
 		$title= $object->Topic;
 		$details= $object->details;

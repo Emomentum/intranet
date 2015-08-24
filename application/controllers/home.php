@@ -8,7 +8,7 @@ class Home extends CI_Controller {
 		$this->load->model('Home_model');		
 		$data['announcement']=$this->Home_model->getUpcomingEventNews($type=1);
 		$data['communications']=$this->Home_model->getUpcomingEventNews($type=2);
-		$data['events']=$this->Home_model->getUpcomingEventNews($type=4);
+		$data['upcoming']=$this->Home_model->getUpcomingEventNews($type=4);
 		$data['breadcrum'] = "Home";
 		//$data = array('active_state_home'=>'active_state','active_state_department'=>'blank','active_state_gallery'=>'blank','active_state_blog'=>'blank');
 		$this->load->view('home',$data);
@@ -21,11 +21,13 @@ class Home extends CI_Controller {
 		if($type==4){
 		$this->load->model('Home_model');
 		$data['events']=$this->Home_model->getAllUpcomingEventNews($type);
+		$data['upcoming']=$this->Home_model->getUpcomingEventNews($type=4);
 		$data['breadcrum'] = "Upcoming Events";
 		$this->load->view('includes/view_events',$data);
 		}else{
 		$this->load->model('Home_model');
 		$data['events']=$this->Home_model->getAllUpcomingEventNews($type);
+		$data['upcoming']=$this->Home_model->getUpcomingEventNews($type=4);
 		$data['breadcrum'] = "Upcoming Events";
 		$this->load->view('includes/view_blog',$data);
 		}
@@ -36,6 +38,7 @@ class Home extends CI_Controller {
 		$data['type']=$type;
 		$this->load->model('Home_model');
 		$data['event']=$this->Home_model->getEvent($id);
+		$data['upcoming']=$this->Home_model->getUpcomingEventNews($type=4);
 		$data['breadcrum'] = "Upcoming Event";
 		$this->load->view('includes/single_event',$data);
 		

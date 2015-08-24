@@ -32,7 +32,7 @@ class Home extends CI_Controller {
 }		
 
 	function single_events($id){
-		
+		//$data['type']=$type;
 		$this->load->model('Home_model');
 		$data['event']=$this->Home_model->getEvent($id);
 		$data['breadcrum'] = "Upcoming Event";

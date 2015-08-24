@@ -31,8 +31,8 @@
 		$title= $object->Topic;
 		$id=$object->Blog_topic_id;
 		$details= $object->details;
-        $topic= anchor('home/single_events/'.$id.'',''.$title.'');
-		$readmore=anchor('home/single_events/'.$id.'','Read More',array('style'=>'color:green'));
+        $topic= anchor('home/single_events/'.$id.'/'.$type.'',''.$title.'');
+		$readmore=anchor('home/single_events/'.$id.'/'.$type.'','Read More',array('style'=>'color:green'));
 	
 	  
 	  $string = strip_tags($details);
@@ -72,8 +72,8 @@ if (strlen($string) > 100) {
 		$title= $object->Topic;
 		$id=$object->Blog_topic_id;
 		$details= $object->details;
-        $topic= anchor('home/single_events/'.$id.'',''.$title.'');		
-		$readmore=anchor('home/single_events/'.$id.'','Read More',array('style'=>'color:green'));
+        $topic= anchor('home/single_events/'.$id.'/'.$type.'',''.$title.'');		
+		$readmore=anchor('home/single_events/'.$id.'/'.$type.'','Read More',array('style'=>'color:green'));
 	
 
 $string = strip_tags($details);

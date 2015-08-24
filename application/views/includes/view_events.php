@@ -26,8 +26,8 @@
 		$details= $object->details;
 		$start=$object->End_Date;
 		$end= $object->Start_Date;
-        $topic= anchor('home/single_events/'.$id.'',''.$title.'');		
-		$readmore=anchor('home/single_events/'.$id.'','Read More',array('style'=>'color:green'));
+        $topic= anchor('home/single_events/'.$id.'/'.$type.'',''.$title.'');		
+		$readmore=anchor('home/single_events/'.$id.'/'.$type.'','Read More',array('style'=>'color:green'));
 	
 
 $string = strip_tags($details);

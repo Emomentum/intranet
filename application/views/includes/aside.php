@@ -38,7 +38,7 @@
 		$id=$object->Blog_topic_id;
 		$start= $object->Start_Date;
 		$end=$object->End_Date;
-        $topic= anchor('home/single_events/'.$id.'/'.$type.','.$title.'');
+        $topic= anchor('home/single_events/'.$id.'/'.$type.'',''.$title.'');
 		
 $num_words = 31;
 $words = array();

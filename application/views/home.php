@@ -92,7 +92,8 @@ if (strlen($string) > 100) {
 	
 	}
 	?>
-</ul><?php echo anchor('home/upcoming_events/'.$type.'','View All',array('style'=>'color:green'))?> 
+	<li class="list-group-item"> <?php echo anchor('home/upcoming_events/'.$type.'','View All',array('style'=>'color:green'))?> </li>
+</ul>
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel --></div>
@@ -191,7 +192,9 @@ $shown_string = implode(" ", $words);
             <div class="caption">
 
 
-            <h1>"Dont be the same, be better"</h1>
+            <h1>< ?php
+include("http://quotes.rationalmind.net/random.php");
+?>"Dont be the same, be better"</h1>
 
             </div>
 

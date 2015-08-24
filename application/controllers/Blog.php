@@ -11,26 +11,10 @@ class Blog extends CI_Controller {
 	{
 		$data['blogTopics'] = $this->getTopic();
 		$data['blogTopicDescription'] = $this->blog_model->getTopicDescription();
-		$data['blogDetails'] = $this->getBlogDetails();
 		$data['topicComments'] = $this->blog_model->getComments($data['blogTopicDescription'][0]->Blog_topicID);
 		$data['breadcrum'] = "Blog";
 	//	$data = array('active_state_home'=>'blank','active_state_department'=>'blank','active_state_gallery'=>'blank','active_state_blog'=>'active_state');
 		$this->load->view('blog',$data);
-	}
-	function details($id){
-		
-		$data['blogTopicDescription'] = $this->blog_model->getTopicDescriptions($id);
-		$data['topicComments'] = $this->blog_model->getComments($id);
-		$data['breadcrum'] = "Blog";
-		// echo "<pre>";
-		// echo print_r($data);
-		// echo "</pre>";
-		$this->load->view('blog_details',$data);
-		
-	}
-	function getBlogDetails()
-	{
-		return $this->blog_model->getBlogDetails();
 	}
 	function getTopic()
 	{

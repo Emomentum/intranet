@@ -16,17 +16,6 @@ class Blog_model extends CI_model
 		return false;
 		}
 	}
-	function getBlogDetails(){
-		$blogId = 5;
-		$this->db->select('*');
-		$this->db->from('blog_topic');
-		$this->db->where(array('Blog_type_ID ='=> $blogId));
-		$this->db->join('blog_details','blog_details.Blog_topic_id = blog_topic.Blog_topicID');
-		$this->db->order_by('Blog_topicID','desc');
-		$result = $this->db->get();
-		return $result->result();
-		
-	}
 	public function getTopics()
 	{
 		$blogId = 5;

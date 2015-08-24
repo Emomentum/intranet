@@ -56,28 +56,22 @@
 
             <ul class="nav navbar-nav">
            		 <li><?php echo anchor('home','Home')?></li>
-           		 <li><a href="#" data-toggle="dropdown" class="dropdown-toggle">Operations<b class="caret"></b></a>
+           		 <li><a href="#" data-toggle="dropdown" class="dropdown-toggle">Departments<b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><?php echo anchor('Departments/projects_and_consultancy','Projects And Consultancy')?></li>
-						<li><?php echo anchor('Departments/development','Development')?></li>
-						<li><?php echo anchor('Departments/technical','Technical')?></li>
-					</ul>
-           		 </li>
-           		 <li><a href="#" data-toggle="dropdown" class="dropdown-toggle">Business Development<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Sales</a></li>
-						<li><a href="#">Presales</a></li>
-						<li><a href="#">Marketing</a></li>
-						<li><a href="#">Products and Partnership</a></li>
-					</ul>
-					<li><a href="#" data-toggle="dropdown" class="dropdown-toggle">Administration<b class="caret"></b></a>
-					<ul class="dropdown-menu">
+						<li><a href="#">Marketing Development</a></li>
+						<li><a href="#">Product Development</a></li>
 						<li><a href="#">Directors</a></li>
+						<li><a href="#">Consultancy</a></li>
+						<li><a href="#">Development</a></li>
 						<li><a href="#">Finance</a></li>
 						<li><a href="#">Human Resource</a></li>
+						<li><a href="#">Projects</a></li>
 						<li><a href="#">Risk and Compliance</a></li>
+						<li><a href="#">Existing Business</a></li>
+						<li><a href="#">New Business</a></li>
+						<li><a href="#">Pre-sales</a></li>
+						<li><a href="#">Technical Team</a></li>
 					</ul>
-           		 </li>
            		 </li>
                <li><?php echo anchor('gallery','Gallery')?></li>
                <li><?php echo anchor('blog','Blog')?></li>

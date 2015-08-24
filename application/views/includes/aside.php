@@ -14,7 +14,7 @@
     <li class="list-group-item"><a href="#"><img src="<?php echo base_url()?>assets/images/online_processes/fresh.png" class="online-processes">Fresh Desk</a></li>
     <li class="list-group-item"><a href="#"><img src="<?php echo base_url()?>assets/images/online_processes/chimp.png" class="online-processes">Mail Chimp</a></li>
     <li class="list-group-item"><a href="#"><img src="<?php echo base_url()?>assets/images/online_processes/quickbooks.png" class="online-processes">Quick books</a></li>
-    <li class="list-group-item"><a href="#"><img src="<?php echo base_url()?>assets/images/online_processes/crm.png" class="online-processes">websites</a></li>
+    <li class="list-group-item"><a href="#"><img src="<?php echo base_url()?>assets/images/online_processes/emomentum.png" class="online-processes">websites</a></li>
   </ul>
                             
                         <!-- /.panel-body -->

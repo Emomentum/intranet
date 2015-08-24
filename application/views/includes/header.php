@@ -58,9 +58,9 @@
            		 <li><?php echo anchor('home','Home')?></li>
            		 <li><a href="#" data-toggle="dropdown" class="dropdown-toggle">Operations<b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><a href="#">Projects And Consultancy</a></li>
-						<li><a href="#">Development</a></li>
-						<li><a href="#">Technical</a></li>
+						<li><?php echo anchor('Departments/projects_and_consultancy','Projects And Consultancy')?></li>
+						<li><?php echo anchor('Departments/development','Development')?></li>
+						<li><?php echo anchor('Departments/technical','Technical')?></li>
 					</ul>
            		 </li>
            		 <li><a href="#" data-toggle="dropdown" class="dropdown-toggle">Business Development<b class="caret"></b></a>

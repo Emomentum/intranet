@@ -4,7 +4,7 @@
 .scrollable {
   position:relative;
   overflow:hidden;
-  max-width: 250px;
+  max-width: 995px;
   width:100%;
   height:115px;
   margin-bottom:35px;
@@ -32,7 +32,7 @@
     			<div class="panel-heading">
             		  <span>Our Team</span>
     			</div> 
-    			<div style ="padding: 13px 31px 6px 31px;text-align: justify;">
+    			<div style ="padding: 13px 31px 6px 31px;text-align: justify;min-height: 163px;">
 				<!-- "previous page" action -->
 					<a class="prev browse left"></a>
  
@@ -44,10 +44,40 @@
  
 			<!-- 1-5 -->
    
-                 <div>
-                <img src = ""width="150"/><br><br>
-                <p style = "padding-left:37px;">Development Lead</p>
-                <p style = "padding-left:37px;">Ann </p>
+                <div>
+					<img src = ""width="150"/><br><br>
+					<p style = "padding-left:37px;">Development Lead</p>
+					<p style = "padding-left:37px;">Grace Mureithi </p>
+                </div>
+				<div>
+					<img src = ""width="150"/><br><br>
+					<p style = "padding-left:37px;">Developer</p>
+					<p style = "padding-left:37px;">Adam Mohammed </p>
+                </div>
+					<div>
+					<img src = ""width="150"/><br><br>
+					<p style = "padding-left:37px;">Developer</p>
+					<p style = "padding-left:37px;">David Odhiambo </p>
+                </div>
+					<div>
+					<img src = ""width="150"/><br><br>
+					<p style = "padding-left:37px;">Developer</p>
+					<p style = "padding-left:37px;">David Odhiambo </p>
+                </div>
+					<div>
+					<img src = ""width="150"/><br><br>
+					<p style = "padding-left:37px;">Developer</p>
+					<p style = "padding-left:37px;">David Odhiambo </p>
+                </div>
+					<div>
+					<img src = ""width="150"/><br><br>
+					<p style = "padding-left:37px;">Developer</p>
+					<p style = "padding-left:37px;">David Odhiambo </p>
+                </div>
+					<div>
+					<img src = ""width="150"/><br><br>
+					<p style = "padding-left:37px;">Developer</p>
+					<p style = "padding-left:37px;">David Odhiambo </p>
                 </div>
   </div>
     			</div>    

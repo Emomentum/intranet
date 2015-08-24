@@ -34,6 +34,8 @@
             //$title= anchor('home/viewpage?id='.$id.'',''.$title.'');
 			$date=$row->Timestamp;
 			$cont=$row->details;
+			$start=$row->Start_Date;
+			$end=$row->End_Date;
 			
             $edit=anchor('home/edit_page/'.$id.'/'.$type.'','Edit',array('class'=>'btn btn-primary btn-sm'));
 			$delete=anchor('home/delete_page/'.$id.'/'.$type.'','Delete', array('class'=>'btn btn-primary btn-sm'));
@@ -43,7 +45,8 @@
 								
 echo '<div>';
     echo '<h1>'.$title.'</h1>';
-    echo '<p>Posted on '.date('jS M Y', strtotime($date)).'</p>';
+    echo '<p>Last Edited on '.date('jS M Y', strtotime($date)).'</p>';
+	echo '<p><b>Start Date:</b>'.$start.'<b> End Date:</b>'.$end.'</p>';    
     echo '<p>'.$cont.'</p>';                
 echo '</div>';
 echo $edit;

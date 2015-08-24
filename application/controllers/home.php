@@ -17,10 +17,17 @@ class Home extends CI_Controller {
 	
 	function upcoming_events($type)
 	{
+		if($type==4){
 		$this->load->model('Home_model');
 		$data['events']=$this->Home_model->getAllUpcomingEventNews($type);
 		$data['breadcrum'] = "Upcoming Events";
+		$this->load->view('includes/view_events',$data);
+		}else{
+			$this->load->model('Home_model');
+		$data['events']=$this->Home_model->getAllUpcomingEventNews($type);
+		$data['breadcrum'] = "Upcoming Events";
 		$this->load->view('includes/view_blog',$data);
+		}
 		
 }		
 
@@ -63,8 +70,13 @@ function upcoming()
 
 function create_events($type)
 {
+	if($type==4){
 	$data['type']=$type;	
-	$this->load->view('Admin/includes/create_page',$data);
+	$this->load->view('Admin/includes/create_page_upcoming',$data);
+	}else{
+		$data['type']=$type;
+		$this->load->view('Admin/includes/create_page',$data);
+	}
 }
 
 function viewpage($id,$type)
@@ -77,12 +89,21 @@ function viewpage($id,$type)
 
 function edit_page($id,$type)
 {
-	$data['type']=$type;
+	
 	$this->load->model('Home_model');
+	if($type==4){
+	$data['type']=$type;
+	$this->Home_model->getEvent($id);
+	$data['edit_page']=$this->Home_model->getEvent($id);
+	$this->load->view('Admin/includes/edit_page_upcoming',$data);
+	}else{
+		
+	$data['type']=$type;
 	$this->Home_model->getEvent($id);
 	$data['edit_page']=$this->Home_model->getEvent($id);
 	$this->load->view('Admin/includes/edit_page',$data);
 	
+	}
 }
 
 function delete_page($id,$type)
@@ -94,28 +115,56 @@ function delete_page($id,$type)
 }
 
 function save_events($type)
-{	  	
+{
 	$this->load->model('Home_model');
-	
+	if($type==4){
+		
 	$postTitle = $this->input->post('title');
+	$postStart = $this->input->post('start');
+	$postEnd = $this->input->post('end');
 	$postCont = $this->input->post('content');
 			
-	$this->Home_model->createPage($postTitle,$postCont,$type);
+	$this->Home_model->createPage($postTitle,$postCont,$postStart,$postEnd,$type);
+	}
 	
+	else{	 	
+	
+	$postTitle = $this->input->post('title');
+	$postStart = "N/A";
+	$postEnd = "N/A";
+	$postCont = $this->input->post('content');
+			
+	$this->Home_model->createPage($postTitle,$postCont,$postStart,$postEnd,$type);
+	}
 	$data['message'] = 'Data Inserted Successfully';
 	$this->callPage($type);
 
 }
 
 function update_events($id,$type)
-{ 
+{
+	if($type==4){ 
 	$this->load->model('Home_model');
 	$topic= $this->input->post('title');
 	$description=$this->input->post('content');
 	$postDate = date('Y-m-d H:i:s');
-	$this->Home_model->update_Event($id,$topic,$description,$postDate);
+	$postStart = $this->input->post('start');
+	$postEnd = $this->input->post('end');
+	$this->Home_model->update_Event($id,$topic,$description,$postDate,$postStart,$postEnd);
 	$data['message'] = 'Data Inserted Successfully';
 	$this->callPage($type);
+	}else{
+		
+	$this->load->model('Home_model');
+	$topic= $this->input->post('title');
+	$description=$this->input->post('content');
+	$postDate = date('Y-m-d H:i:s');
+	$postStart = "N/A";
+	$postEnd = "N/A";
+	$this->Home_model->update_Event($id,$topic,$description,$postDate,$postStart,$postEnd);
+	$data['message'] = 'Data Inserted Successfully';
+	$this->callPage($type);
+	}
 
 }
 function callPage($type)

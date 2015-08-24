@@ -136,6 +136,8 @@ if (strlen($string) > 100) {
 		$title= $object->Topic;
 		$details= $object->details;
 		$id=$object->Blog_topic_id;
+		$start= $object->Start_Date;
+		$end=$object->End_Date;
         $topic= anchor('home/single_events/'.$id.'',''.$title.'');
 		
 $num_words = 31;
@@ -149,8 +151,8 @@ if(count($words) == 31){
 
 $shown_string = implode(" ", $words);
 	
-	   echo '<li class="list-group-item" >'.$topic.'<br />';  
-	    echo '</li>';  
+	   echo '<li class="list-group-item" style="color:green" >'.$topic.'<br />';  
+	    echo '<p>Starts on: '.$start.' and Ends On: '.$end.'</p></li>';  
 	
 	}
 	?>
@@ -185,7 +187,7 @@ $shown_string = implode(" ", $words);
 
     <div class="item active"><!---start item 1--->
 
-        <img class="image" src="<?php echo base_url(); ?>assets/images/kk2.jpeg" alt="...">
+        <img class="image" src="<?php echo base_url(); ?>assets/images/kk3.jpeg" alt="...">
 
         <div class="carousel-caption">
 

@@ -45,7 +45,7 @@ class Home_model extends CI_Model {
 	 
 	
 	 
-function createPage($postTitle,$postCont,$type){
+function createPage($postTitle,$postCont,$postStart,$postEnd,$type){
 	
 	 $data=array('Topic'=>$postTitle,'Blog_type_ID'=>$type);
 		 if(empty($this->db->get_where('blog_topic',array('Topic ='=>$postTitle))->result())):
@@ -54,7 +54,7 @@ function createPage($postTitle,$postCont,$type){
 			 $newblogTopicId = $this->db->select('Blog_topicID')->from('blog_topic')
 			 						->where(array('Topic ='=> $postTitle))
 			 						->get()->result()[0]->Blog_topicID;
-			 $data2 = array('details'=>$postCont,'Blog_topic_id'=>$newblogTopicId); 
+			 $data2 = array('details'=>$postCont,'Blog_topic_id'=>$newblogTopicId,'Start_Date'=>$postStart,'End_Date'=>$postEnd); 
 		 	 $this->db->insert('blog_details',$data2);
 		 else:
          return "Topic already exist";
@@ -74,13 +74,13 @@ function delete_Event($id)
 	 //return $res4;	  
 }
 
-function update_Event($id,$topic,$description,$postDate)
+function update_Event($id,$topic,$description,$postDate,$postStart,$postEnd)
 {
 
 $data = array('Topic'=>$topic,'Timestamp'=>$postDate);	
 		$this->db->where('Blog_topicID',$id)
 				->update('blog_topic',$data);
-		$data2=array('details'=>$description);
+		$data2=array('details'=>$description,'Start_Date'=>$postStart,'End_Date'=>$postEnd);
         $this->db->where('Blog_topic_id',$id)
               	 ->update('blog_details',$data2);
 

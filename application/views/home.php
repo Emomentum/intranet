@@ -17,7 +17,7 @@
     <div class="container">
     <div class="row">
     						 <div class="col-lg-4  service" id="service1">
-    						 	<div class="panel panel-default" style = "min-height: 893px;">
+    						 	<div class="panel panel-default">
                         <div class="panel-heading">
                             Announcement
                         </div>
@@ -28,7 +28,8 @@
     	
 	foreach ($announcement as $object ) {
 		$type=1;
-		$title= $object->Topic;
+		$title1= $object->Topic;
+		$title= substr($title1, 0, 35);
 		$id=$object->Blog_topic_id;
 		$details= $object->details;
         $topic= anchor('home/single_events/'.$id.'/'.$type.'',''.$title.'');
@@ -46,7 +47,7 @@ if (strlen($string) > 100) {
     $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'... '.$readmore.''; 
 }
 	
-	   echo '<li class="list-group-item" ><div style="color: #222;font-weight: bold;">'.$topic.'</div><br />';  
+	   echo '<li class="list-group-item" ><div style="color: #222;font-weight: bold;">'.$topic.'...</div><br />';  
 	    echo '<p><img src="'.base_url().'assets/images/online_processes/ann.png" class="online-processes" align="left">'.$string.'</p></li>';      
 	
 	}
@@ -59,7 +60,7 @@ if (strlen($string) > 100) {
                     </div>
                     <!-- /.panel --></div>
                     
-    <div class="col-lg-4 service" id="service1"><div class="panel panel-default" style = "min-height: 893px;">
+    <div class="col-lg-4 service" id="service1"><div class="panel panel-default">
                         <div class="panel-heading">
                             Communications
                         </div>
@@ -69,7 +70,8 @@ if (strlen($string) > 100) {
     	
 	foreach ($communications as $object ) {
 		$type=2;
-		$title= $object->Topic;
+		$title1= $object->Topic;
+		$title= substr($title1, 0, 35);
 		$id=$object->Blog_topic_id;
 		$details= $object->details;
         $topic= anchor('home/single_events/'.$id.'/'.$type.'',''.$title.'');		
@@ -87,7 +89,7 @@ if (strlen($string) > 100) {
     $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'... '.$readmore.''; 
 }
 	
-	   echo '<li class="list-group-item" ><div style="color: #222;font-weight: bold;">'.$topic.'</div><br />';  
+	   echo '<li class="list-group-item" ><div style="color: #222;font-weight: bold;">'.$topic.'...</div><br />';  
 	    echo '<p><img src="'.base_url().'assets/images/online_processes/com.png" class="online-processes" align="left">'.$string .'</p></li>';   
 	
 	}

@@ -8,7 +8,7 @@ class Home extends CI_Controller {
 		$this->load->model('Home_model');		
 		$data['announcement']=$this->Home_model->getUpcomingEventNews($type=1);
 		$data['communications']=$this->Home_model->getUpcomingEventNews($type=2);
-		$data['upcoming']=$this->Home_model->getUpcomingEventNews($type=4);
+		$data['upcoming']=$this->Home_model->eventNews($type=4);
 		$data['breadcrum'] = "Home";
 		//$data = array('active_state_home'=>'active_state','active_state_department'=>'blank','active_state_gallery'=>'blank','active_state_blog'=>'blank');
 		$this->load->view('home',$data);
@@ -18,17 +18,16 @@ class Home extends CI_Controller {
 	function upcoming_events($type)
 	{
 		$data['type']=$type;
-		if($type==4){
 		$this->load->model('Home_model');
 		$data['events']=$this->Home_model->getAllUpcomingEventNews($type);
-		$data['upcoming']=$this->Home_model->getUpcomingEventNews($type=4);
+		$data['upcoming']=$this->Home_model->eventNews($type=4);
 		$data['breadcrum'] = "Upcoming Events";
+		
+		if($type==4){
+		
 		$this->load->view('includes/view_events',$data);
 		}else{
-		$this->load->model('Home_model');
-		$data['events']=$this->Home_model->getAllUpcomingEventNews($type);
-		$data['upcoming']=$this->Home_model->getUpcomingEventNews($type=4);
-		$data['breadcrum'] = "Upcoming Events";
+		
 		$this->load->view('includes/view_blog',$data);
 		}
 		
@@ -38,7 +37,7 @@ class Home extends CI_Controller {
 		$data['type']=$type;
 		$this->load->model('Home_model');
 		$data['event']=$this->Home_model->getEvent($id);
-		$data['upcoming']=$this->Home_model->getUpcomingEventNews($type=4);
+		$data['upcoming']=$this->Home_model->eventNews($type=4);
 		$data['breadcrum'] = "Upcoming Event";
 		$this->load->view('includes/single_event',$data);
 		
@@ -95,16 +94,15 @@ function edit_page($id,$type)
 {
 	
 	$this->load->model('Home_model');
-	if($type==4){
 	$data['type']=$type;
 	$this->Home_model->getEvent($id);
 	$data['edit_page']=$this->Home_model->getEvent($id);
+	
+	if($type==4){
+	
 	$this->load->view('Admin/includes/edit_page_upcoming',$data);
 	}else{
 		
-	$data['type']=$type;
-	$this->Home_model->getEvent($id);
-	$data['edit_page']=$this->Home_model->getEvent($id);
 	$this->load->view('Admin/includes/edit_page',$data);
 	
 	}

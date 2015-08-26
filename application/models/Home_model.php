@@ -27,11 +27,21 @@ class Home_model extends CI_Model {
 		$this->db->where(array('Blog_type_ID ='=> $type));
 		$this->db->order_by('Blog_topicID', 'desc');
 		$this->db->join('blog_details','blog_details.Blog_topic_id=blog_topic.Blog_topicID' );
+	    $this->db->limit(7);
+		$result = $this->db->get();
+        return $result->result();
+		}
+	  function eventNews($type){
+
+		$this->db->select('*');
+		$this->db->from('blog_topic');
+		$this->db->where(array('Blog_type_ID ='=> $type));
+		$this->db->order_by('Blog_topicID', 'desc');
+		$this->db->join('blog_details','blog_details.Blog_topic_id=blog_topic.Blog_topicID' );
 	    $this->db->limit(5);
 		$result = $this->db->get();
         return $result->result();
 		}
-	 
 	 function getAllUpcomingEventNews($type){
 
 		$this->db->select('*');

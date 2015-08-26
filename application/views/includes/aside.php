@@ -33,25 +33,16 @@
 		
 	foreach ($upcoming as $object ) {
 		$type=4;
-		$title= $object->Topic;
+		$title1= $object->Topic;
+		$title= substr($title1, 0, 45);
 		$details= $object->details;
 		$id=$object->Blog_topic_id;
 		$start= $object->Start_Date;
 		$end=$object->End_Date;
         $topic= anchor('home/single_events/'.$id.'/'.$type.'',''.$title.'');
 		
-$num_words = 31;
-$words = array();
-$words = explode(" ", $details, $num_words);
-$shown_string = "";
-
-if(count($words) == 31){
-   $words[30] = " ... ";
-}
-
-$shown_string = implode(" ", $words);
 	
-	   echo '<li class="list-group-item" style="color:green" >'.$topic.'<br />';  
+	   echo '<li class="list-group-item" style="color:green" >'.$topic.'...<br />';  
 	    echo '<p>Starts on: '.$start.' and Ends On: '.$end.'</p></li>';  
 	
 	}

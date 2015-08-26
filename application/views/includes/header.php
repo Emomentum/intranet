@@ -56,6 +56,15 @@
 
             <ul class="nav navbar-nav">
            		 <li><?php echo anchor('home','Home')?></li>
+           		 <li><a href="#" data-toggle="dropdown" class="dropdown-toggle">Administration<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><?php echo anchor('Departments/directors','Directors')?></li>
+						<li><?php echo anchor('Departments/finance','Finance')?></li>
+						<li><?php echo anchor('Departments/hr','Human Resource')?></li>
+						<li><?php echo anchor('Departments/risk','Risk and Compliance')?></li>
+					</ul>
+           		 </li>
+           		 </li>
            		 <li><a href="#" data-toggle="dropdown" class="dropdown-toggle">Operations<b class="caret"></b></a>
 					<ul class="dropdown-menu">
 						<li><?php echo anchor('Departments/projects_and_consultancy','Projects And Consultancy')?></li>
@@ -65,20 +74,11 @@
            		 </li>
            		 <li><a href="#" data-toggle="dropdown" class="dropdown-toggle">Business Development<b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><a href="#">Sales</a></li>
-						<li><a href="#">Presales</a></li>
-						<li><a href="#">Marketing</a></li>
-						<li><a href="#">Products and Partnership</a></li>
+						<li><?php echo anchor('Departments/sales','Sales')?></li>
+						<li><?php echo anchor('Departments/presales','Pre Sales')?></li>
+						<li><?php echo anchor('Departments/marketing','Marketing')?></li>
+						<li><?php echo anchor('Departments/products','Products and Partnership')?></li>
 					</ul>
-					<li><a href="#" data-toggle="dropdown" class="dropdown-toggle">Administration<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Directors</a></li>
-						<li><a href="#">Finance</a></li>
-						<li><a href="#">Human Resource</a></li>
-						<li><a href="#">Risk and Compliance</a></li>
-					</ul>
-           		 </li>
-           		 </li>
                <li><?php echo anchor('gallery','Gallery')?></li>
                <li><?php echo anchor('blog','Blog')?></li>
             </ul>

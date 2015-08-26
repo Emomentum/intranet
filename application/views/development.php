@@ -43,32 +43,18 @@
 					<div class="items">
  
 			<!-- 1-5 -->
+			<?php
+			 foreach($team as $team):
+				 ?>
    
                 <div>
 					<img src = "<?=base_url();?>assets/images/profile.png"width="150"/><br><br>
-					<p style = "padding-left:37px;">Development Lead</p>
-					<p style = "padding-left:37px;">Grace Mureithi </p>
+					<p style = "padding-left:37px;"><?=$team->Position;?></p>
+					<p style = "padding-left:37px;"><?=$team->First_Name?> <?=$team->Last_Name; ?> </p>
                 </div>
-				<div>
-					<img src = "<?=base_url();?>assets/images/profile.png"width="150"/><br><br>
-					<p style = "padding-left:37px;">Developer</p>
-					<p style = "padding-left:37px;">Adam Mohammed </p>
-                </div>
-					<div>
-					<img src = "<?=base_url();?>assets/images/profile.png"width="150"/><br><br>
-					<p style = "padding-left:37px;">Developer</p>
-					<p style = "padding-left:37px;">David Odhiambo </p>
-                </div>
-					<div>
-					<img src = "<?=base_url();?>assets/images/profile.png"width="150"/><br><br>
-					<p style = "padding-left:37px;">Developer</p>
-					<p style = "padding-left:37px;">Robert Ouko </p>
-                </div>
-					<div>
-					<img src = "<?=base_url();?>assets/images/profile.png"width="150"/><br><br>
-					<p style = "padding-left:37px;">Developer</p>
-					<p style = "padding-left:37px;">Harry Mule </p>
-                </div>
+                <?php
+			 endforeach;
+                ?>
   </div>
     			</div>    
  

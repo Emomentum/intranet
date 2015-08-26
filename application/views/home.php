@@ -136,7 +136,9 @@ if (strlen($string) > 100) {
             <div class="caption">
 
 
-            <h1>"Dont be the same, be better"</h1>
+            <h3><script type="text/javascript" src="http://www.brainyquote.com/link/quotebr.js">
+            	
+            </script></h3>
 
             </div>
 

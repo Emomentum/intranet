@@ -46,7 +46,7 @@ if (strlen($string) > 100) {
     $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'... '.$readmore.''; 
 }
 	
-	   echo '<li class="list-group-item" ><div style="color: #222;font-size: 18px;font-weight: bold;padding-bottom: 1px;">'.$topic.'</div><br />';  
+	   echo '<li class="list-group-item" ><div style="color: #222;font-weight: bold;">'.$topic.'</div><br />';  
 	    echo '<p><img src="'.base_url().'assets/images/online_processes/ann.png" class="online-processes" align="left">'.$string.'</p></li>';      
 	
 	}
@@ -87,7 +87,7 @@ if (strlen($string) > 100) {
     $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'... '.$readmore.''; 
 }
 	
-	   echo '<li class="list-group-item" ><div style="color: #222;font-size: 18px;font-weight: bold;padding-bottom: 1px;">'.$topic.'</div><br />';  
+	   echo '<li class="list-group-item" ><div style="color: #222;font-weight: bold;">'.$topic.'</div><br />';  
 	    echo '<p><img src="'.base_url().'assets/images/online_processes/com.png" class="online-processes" align="left">'.$string .'</p></li>';   
 	
 	}

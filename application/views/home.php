@@ -17,7 +17,7 @@
     <div class="container">
     <div class="row">
     						 <div class="col-lg-4  service" id="service1">
-    						 	<div class="panel panel-default">
+    						 	<div class="panel panel-default" style = "min-height: 893px;">
                         <div class="panel-heading">
                             Announcement
                         </div>
@@ -59,7 +59,7 @@ if (strlen($string) > 100) {
                     </div>
                     <!-- /.panel --></div>
                     
-    <div class="col-lg-4 service" id="service1"><div class="panel panel-default">
+    <div class="col-lg-4 service" id="service1"><div class="panel panel-default" style = "min-height: 893px;">
                         <div class="panel-heading">
                             Communications
                         </div>

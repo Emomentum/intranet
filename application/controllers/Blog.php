@@ -13,7 +13,12 @@ class Blog extends CI_Controller {
 		$data['blogTopicDescription'] = $this->blog_model->getTopicDescription();
 		$data['blogDetails'] = $this->getBlogDetails();
 		$data['topicComments'] = $this->blog_model->getComments($data['blogTopicDescription'][0]->Blog_topicID);
+		//$data['NoofComments'] = $this->blog_model->getCommentsNo($data['blogTopicDescription'][0]->Blog_topicID);
 		$data['breadcrum'] = "Blog";
+		// echo "<pre>";
+		// echo print_r($data);
+		// echo "</pre>";
+		// die();
 	//	$data = array('active_state_home'=>'blank','active_state_department'=>'blank','active_state_gallery'=>'blank','active_state_blog'=>'active_state');
 		$this->load->view('blog',$data);
 	}
@@ -61,8 +66,9 @@ class Blog extends CI_Controller {
 	 }	
    public function setComment($topicid){
    	
-	   $comment = $this->input->post("comment");
+	   $comment = $this->input->post("newcomments");
 	   $userEmail = $_SERVER['USER_EMAIL'];
        $this->blog_model->setcomment($topicid,$comment,$userEmail);
+	   redirect('blog/details/'.$topicid);
    }
 }

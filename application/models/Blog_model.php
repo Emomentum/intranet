@@ -64,6 +64,12 @@ class Blog_model extends CI_model
         $result = $this->db->get_where('blog_comments',array('Blog_topic_ID ='=> $topicid))->result();
             return $result;
     }
+	 public function getCommentsNo($topicid)
+    {
+        $this->db->get_where('blog_comments',array('Blog_topic_ID ='=> $topicid))->result();
+		$result = $this->db->affected_rows();
+        return $result;
+    }
     public function setComments($topicid,$mydetails)
     {
         $mycomment = array('details'=>$mydetails,'topicid'=>$topicid);

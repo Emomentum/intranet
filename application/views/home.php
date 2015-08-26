@@ -127,7 +127,7 @@ if (strlen($string) > 100) {
 
     <div class="item active"><!---start item 1--->
 
-        <img class="image" src="<?php echo base_url(); ?>assets/images/kk3.jpeg" alt="...">
+        <img class="image" src="<?php echo base_url(); ?>assets/images/kk3.jpg" alt="...">
 
         <div class="carousel-caption">
 

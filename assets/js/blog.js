@@ -72,41 +72,42 @@ $('li.blog_topic a').click(function(){
 		})
 	return false;	
 })
-$('input.newCmt').click(function(){
-	var current = $(this).closest("li.blog_topic");
-	var topic = $('input.topicid').val();
-	var useremail = $('input#useremail').val();
-	var newcomment = $('textarea#comments').val();
-	var topicid = parseInt(topic);
-	var currentdate = new Date();
-	var datetime = currentdate.getFullYear() + "/"+currentdate.getMonth() + 1 + "/" + currentdate.getDay() +" "+ currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
-    var link = 'blog/setComment/'+topicid;
-    		$.ajax({
-			url:link,
-			type:"POST",
-			datatype:"json",
-			cache:false,
-			data:{"comment":newcomment},
-			success:function(result){
-				console.log(comment.innerHTML);
-				if(comment.innerHTML != '<p>No Comments Available</p><hr style="color: #07AA53;border: dotted 1px;">')
-				{
-				comment.innerHTML = comment.innerHTML+"<p>"+newcomment+"</p><p style='font-size:9px;margin: 10px 0 10px;color: #07AB54;'>Author : "+useremail+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Posted on : "+ datetime + "</p><hr style ='color: #07AA53;border: dotted 1px;'>";
-				$('textarea#comments').val("");
-				}
-				else
-				{
-				comment.innerHTML = "<p>"+newcomment+"</p><p style='font-size:9px;margin: 10px 0 10px;color: #07AB54;'>Author : "+useremail+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Posted on : "+ datetime + "</p><hr style ='color: #07AA53;border: dotted 1px;'>";
-				$('textarea#comments').val("");
-					
-				}
-	},
-			error:function(msg){
-				console.log(msg);
-			}
-		})
-	return false;	
-})
+// $('input.newCmt').click(function(){
+	// var current = $(this).closest("li.blog_topic");
+	// var topic = $('input.topicid').val();
+	// var useremail = $('input#useremail').val();
+	// var newcomment = $('textarea#comments').val();
+	// var topicid = parseInt(topic);
+	// console.log(topicid);
+	// var currentdate = new Date();
+	// var datetime = currentdate.getFullYear() + "/"+currentdate.getMonth() + 1 + "/" + currentdate.getDay() +" "+ currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+    // var link = 'blog/setComment/'+topicid;
+    		// $.ajax({
+			// url:link,
+			// type:"POST",
+			// datatype:"json",
+			// cache:false,
+			// data:{"comment":newcomment},
+			// success:function(result){
+				// console.log(result);
+				// if(comment.innerHTML != '<p>No Comments Available</p><hr style="color: #07AA53;border: dotted 1px;">')
+				// {
+				// comment.innerHTML = comment.innerHTML+"<p>"+newcomment+"</p><p style='font-size:9px;margin: 10px 0 10px;color: #07AB54;'>Author : "+useremail+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Posted on : "+ datetime + "</p><hr style ='color: #07AA53;border: dotted 1px;'>";
+				// $('textarea#comments').val("");
+				// }
+				// else
+				// {
+				// comment.innerHTML = "<p>"+newcomment+"</p><p style='font-size:9px;margin: 10px 0 10px;color: #07AB54;'>Author : "+useremail+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Posted on : "+ datetime + "</p><hr style ='color: #07AA53;border: dotted 1px;'>";
+				// $('textarea#comments').val("");
+// 					
+				// }
+	// },
+			// error:function(msg){
+				// console.log(msg);
+			// }
+		// })
+	// return false;	
+// })
 }
 )	
 

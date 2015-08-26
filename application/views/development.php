@@ -45,39 +45,29 @@
 			<!-- 1-5 -->
    
                 <div>
-					<img src = ""width="150"/><br><br>
+					<img src = "<?=base_url();?>assets/images/profile.png"width="150"/><br><br>
 					<p style = "padding-left:37px;">Development Lead</p>
 					<p style = "padding-left:37px;">Grace Mureithi </p>
                 </div>
 				<div>
-					<img src = ""width="150"/><br><br>
+					<img src = "<?=base_url();?>assets/images/profile.png"width="150"/><br><br>
 					<p style = "padding-left:37px;">Developer</p>
 					<p style = "padding-left:37px;">Adam Mohammed </p>
                 </div>
 					<div>
-					<img src = ""width="150"/><br><br>
+					<img src = "<?=base_url();?>assets/images/profile.png"width="150"/><br><br>
 					<p style = "padding-left:37px;">Developer</p>
 					<p style = "padding-left:37px;">David Odhiambo </p>
                 </div>
 					<div>
-					<img src = ""width="150"/><br><br>
+					<img src = "<?=base_url();?>assets/images/profile.png"width="150"/><br><br>
 					<p style = "padding-left:37px;">Developer</p>
-					<p style = "padding-left:37px;">David Odhiambo </p>
+					<p style = "padding-left:37px;">Robert Ouko </p>
                 </div>
 					<div>
-					<img src = ""width="150"/><br><br>
+					<img src = "<?=base_url();?>assets/images/profile.png"width="150"/><br><br>
 					<p style = "padding-left:37px;">Developer</p>
-					<p style = "padding-left:37px;">David Odhiambo </p>
-                </div>
-					<div>
-					<img src = ""width="150"/><br><br>
-					<p style = "padding-left:37px;">Developer</p>
-					<p style = "padding-left:37px;">David Odhiambo </p>
-                </div>
-					<div>
-					<img src = ""width="150"/><br><br>
-					<p style = "padding-left:37px;">Developer</p>
-					<p style = "padding-left:37px;">David Odhiambo </p>
+					<p style = "padding-left:37px;">Harry Mule </p>
                 </div>
   </div>
     			</div>    
@@ -97,7 +87,12 @@
     			<div class="panel-heading">
             		  <span>Public Folders</span>
     			</div> 
-    			<div style ="padding: 13px 31px 6px 31px;text-align: justify;">
+    			<div style ="padding: 36px 31px 31px 31px;;text-align: justify;">
+    				
+					<iframe style = "max-width:1045px;width:100%;background-color: #fff;" src = "https://drive.google.com/embeddedfolderview?id=0B4G2H5OFvlsmfkNNNjhWdWdjSVpIblpZTnE1LW1hR1ZzX3pyM0pIS1ozbXB4WWhYQUFjb2M#list" width = "800" height = "281" frameborder = "0">
+                    </iframe>
+                      <a href = "https://drive.google.com/a/emomentum-interactive.com/folderview?hl=en&id=0B4G2H5OFvlsmfkNNNjhWdWdjSVpIblpZTnE1LW1hR1ZzX3pyM0pIS1ozbXB4WWhYQUFjb2M#list" target ="_blank" style = "padding-bottom:8px;float:left"><img src = "https://cdn.rawgit.com/Emomentum/Jambojet/master/images/drive folder.png" width = "22"/>Open in drive</a> 
+                
     			</div>                     
                           <!-- List group -->
   				

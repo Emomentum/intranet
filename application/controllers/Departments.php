@@ -17,4 +17,5 @@ class Departments extends CI_Controller {
 			$data['breadcrum'] = "Departments/Operations/projects and consultancy";
 			$this->load->view('projects_and_consultancy',$data);
 		}
+		
 }

@@ -19,18 +19,23 @@
                         <div class="panel-body blog_topics" style = "min-height:206px;">
                         	<?php echo form_open('blog/details/'.$BlogDetails->Blog_topicID);?>
 							<img src = "<?=base_url()?>assets/images/blog.jpg" width = "150" height = "150" align = "left"/>  
-							<div class = "description" style = "text-align: justify">
+							<div >
+							<a href = "<?php echo 'blog/details/'.$BlogDetails->Blog_topicID?>" style = "float:right;color:#00A94F;">
+							<?php
+							$this->load->model('blog_model');
+							echo $this->blog_model->getCommentsNo($BlogDetails->Blog_topicID); 
+							
+							?> <i class="fa fa-comment fa-1x"></i></a>
+							</div>
+							<div class = "description" style = "text-align: justify;padding-top:25px"">
 							<?php 
-							echo substr("$BlogDetails->details;",0,170);
+							echo substr("$BlogDetails->details;",0,120);
 							echo " ...";
 							?>
 							</div>
 							<div>
-							<a href = "" style = "float:left;color:#00A94F;">10 <i class="fa fa-comment fa-1x"></i></a>
-							</div>
-							<div>
 							<input style = "float:right;color:#00A94F;" type = "submit" value = "Readmore"/>  
-							</div>
+							</div>					
                         </form>
                         </div>
                         <!-- /.panel-body -->

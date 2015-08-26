@@ -15,8 +15,10 @@
 			<?php foreach($blogTopicDescription as $description):?>
     			<div class="panel-heading">
             		  <span id = "BlogTopic"><?=$description->Topic ;?></span>
-            		  <input class = "topicid" type = "text" value = "<?=$description->Blog_topicID?>" hidden = "true"/>
-            		  <input id = "useremail" type = "text" value = "<?=$_SERVER['USER_EMAIL']?>" hidden = "true"/>
+            		  <?php 
+            		  	$blogid = $description->Blog_topicID;
+            		  ?>"
+            		 
     			</div> 
     			<div style ="padding: 13px 31px 6px 31px;text-align: justify;" id = "BlogDescription">
     				
@@ -32,10 +34,13 @@
     				<hr style ='color: #07AA53;border: dotted 1px;'>
     					<?php endforeach ?>
     				</div> 
+    				<?php echo form_open('blog/setComment/'.$blogid);
+					?>
     				<div style ="padding: 13px 31px 25px 31px;height: 41%;">
-	    				<textarea placeholder = "Type Your Comment here" style = "width:100%;height:121px" name="comments" id = "comments" class = "newcomments form-control"></textarea><br/>
+	    				<textarea placeholder = "Type Your Comment here" style = "width:100%;height:121px" name="newcomments" id = "newcomments" class = "newcomments form-control"></textarea><br/>
 	    				<input type ="submit" value = "Submit" id ="add_comments" class = "btn btn-primary newCmt" style = "margin:10px;float:right;font-size:13px;"/>
-    			    </div>  				
+    			    </div>  
+    			    </form>				
     			</div>                      
                           <!-- List group -->
   				

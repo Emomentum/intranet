@@ -28,7 +28,7 @@
 
     <div class="item active"><!---start item 1--->
 
-        <img class="image" src="<?php echo base_url(); ?>assets/images/kk2.jpeg" alt="...">
+        <img class="image" src="<?php echo base_url(); ?>assets/images/kk2.jpg" alt="...">
 
         <div class="carousel-caption">
 
@@ -38,7 +38,7 @@
 
             <p>Dedicated to building businesses. </p>
 
-            <a class="btn btn-success btn-large more" href="#">Learn more <span class="glyphicon glyphicon-play"></span></a>
+
 
             </div>
 
@@ -50,7 +50,7 @@
 
     <div class="item"><!---start item 2--->
 
-        <img class="image" src="<?php echo base_url(); ?>assets/images/kk.jpeg" alt="...">
+        <img class="image" src="<?php echo base_url(); ?>assets/images/kk.png" alt="...">
 
         <div class="carousel-caption">
 
@@ -60,7 +60,7 @@
 
             <p> Innovation through collaboration.</p>
 
-            <a class="btn btn-info btn-large more" href="#">Learn more <span class="glyphicon glyphicon-play"></span></a>
+          
 
             </div>
 
@@ -72,7 +72,7 @@
 
     <div class="item"><!---start item 3--->
 
-        <img class="image" src="<?php echo base_url(); ?>assets/images/kk1.jpeg" alt="...">
+        <img class="image" src="<?php echo base_url(); ?>assets/images/kk1.jpg" alt="...">
 
         <div class="carousel-caption">
 
@@ -81,8 +81,6 @@
             <h2>EXPERTISE</h2>
 
             <p>Services that provide infinite possibilities.</p>
-
-            <a class="btn btn-primary btn-large more" href="#">Learn more <span class="glyphicon glyphicon-play"></span></a>
 
             </div>
 

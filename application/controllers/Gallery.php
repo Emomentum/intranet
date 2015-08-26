@@ -6,6 +6,6 @@ class Gallery extends CI_Controller {
 	public function index()
 	{
 		$data['breadcrum'] = "Gallery";
-		$this->load->view('gallery',$data);
+		$this->load->view('album',$data);
 	}					
 }

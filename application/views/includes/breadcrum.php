@@ -5,8 +5,8 @@
 <div class="col-md-12">
 
 <ul class="breadcrumb">
-You are here>>
-<li><?php echo $breadcrum?>/</li>
+
+<b><?php echo $breadcrum?></b>
 
 </div> <!-- end of col-md-12-->
 </div> <!-- end of row-->

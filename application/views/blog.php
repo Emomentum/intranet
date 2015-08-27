@@ -10,39 +10,56 @@
 ?>
 <div class="container">
     <div class="row">
-    	<?php  foreach($blogDetails as $BlogDetails): ?>
-    <div class="col-lg-4 service" id="service1">
-    	<div class="panel panel-default">
-                        <div class="panel-heading">
-                            <?=anchor('',$BlogDetails->Topic,array("style"=>"color:#fff;text-decoration:none;font-weight:600;","class"=>"blog_topic"));?>
-						</div>
-                        <div class="panel-body blog_topics" style = "min-height:206px;">
-                        	<?php echo form_open('blog/details/'.$BlogDetails->Blog_topicID);?>
-							<img src = "<?=base_url()?>assets/images/blog.jpg" width = "150" height = "150" align = "left"/>  
-							<div >
-							<a href = "<?php echo 'blog/details/'.$BlogDetails->Blog_topicID?>" style = "float:right;color:#00A94F;">
-							<?php
-							$this->load->model('blog_model');
-							echo $this->blog_model->getCommentsNo($BlogDetails->Blog_topicID); 
-							
-							?> <i class="fa fa-comment fa-1x"></i></a>
-							</div>
-							<div class = "description" style = "text-align: justify;padding-top:25px"">
-							<?php 
-							echo substr("$BlogDetails->details;",0,120);
-							echo " ...";
-							?>
-							</div>
-							<div>
-							<input style = "float:right;color:#00A94F;" type = "submit" value = "Readmore"/>  
-							</div>					
-                        </form>
-                        </div>
+    	
+    <div class="col-lg-8  service" id="service1">
+                       
+                          <!-- List group -->
+  <ul class="list-group">
+  	<?php foreach($blogDetails as $BlogDetails){
+		
+		$title= $BlogDetails->Topic;
+		$id=$BlogDetails->Blog_topic_id;
+		$details= $BlogDetails->details;
+        $topic= anchor('blog/details/'.$id.'',''.$title.'');		
+		$readmore=anchor('blog/details/'.$id.'','Read More',array('style'=>'color:green'));
+		$this->load->model('blog_model');
+		$comments=$this->blog_model->getCommentsNo($BlogDetails->Blog_topicID);  
+	
+
+$string = strip_tags($details);
+
+if (strlen($string) > 200) {
+
+    // truncate string
+    $stringCut = substr($string, 0, 199);
+
+    // make sure it ends in a word so assassinate doesn't become ass...
+    $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'... '.$readmore.''; 
+}?>
+	<div class="media">
+  <div class="media-left">
+    <a href="#">
+     <img src="<?php echo base_url();?>assets/images/online_processes/com.png" class="online-processes" align="left">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading" style="color: #222;font-size: 18px;font-weight: bold;padding-bottom: 1px;"><?php echo $topic;?></h4>
+    <i class="fa fa-comment fa-1x"></i> <?php echo $comments;?> Comments</a>
+    <p><?php echo $string; ?></p>
+  </div>
+</div>
+<?php
+	   echo'<hr>';
+	}
+	
+	?>
+  </ul>
                         <!-- /.panel-body -->
-         </div>
-                    <!-- /.panel -->
-    </div>
-    <?php endforeach; ?> 
+                    
+                    <!-- /.panel --></div>
+                     <?php 
+	$this->load->view('includes/aside');
+?>
   </div><!--end of row -->
                   </div>
 <?php $this->load->view('includes/footer');?>

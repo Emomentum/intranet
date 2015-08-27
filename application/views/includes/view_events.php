@@ -10,10 +10,7 @@
 ?>
 <div class="container">
     <div class="row">
-					 <div class="col-lg-8  service" id="service1"><div class="panel panel-default">
-                        <div class="panel-heading">
-                            Details
-                        </div>
+					 <div class="col-lg-8  service" id="service1">
                        
                           <!-- List group -->
   <ul class="list-group">
@@ -40,16 +37,25 @@ if (strlen($string) > 200) {
     // make sure it ends in a word so assassinate doesn't become ass...
     $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'... '.$readmore.''; 
 }
-	
-	   echo '<li class="list-group-item" ><div style="color: #222;font-size: 18px;font-weight: bold;padding-bottom: 1px;">'.$topic.'</div><br />';  
-	    echo '<p><img src="'.base_url().'assets/images/online_processes/com.png" class="online-processes" align="left"><b>Starts On:'.$start.'and Ends On:'.$end .'</b><br /><br />'.$string .'</p></li>';   
-	
+	?>
+	<div class="media">
+  <div class="media-left">
+    <a href="#">
+     
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading" style="color: #222;font-size: 18px;font-weight: bold;padding-bottom: 1px;"><?php echo $topic;?></h4>
+    <b>Starts On: <?php echo $start; ?>  and Ends On:  <?php echo $end; ?></b><br /><br />
+    <p><?php echo $string; ?></p>
+  </div>
+</div>
+<?php
+	   echo'<hr>';
 	}
 	?>
   </ul>
-                        <!-- /.panel-body -->
                     </div>
-                    <!-- /.panel --></div>
                     <?php 
 	$this->load->view('includes/aside');
 ?>

@@ -28,7 +28,7 @@
 <div class="container">
     <div class="row">
 
-		<div class="col-lg-12  service" id="service1">
+		<div class="col-lg-8  service" id="service1">
 		<div class="panel panel-default">
     			<div class="panel-heading">
             		  <span>Photo Albums</span>
@@ -46,6 +46,9 @@
        </div>
  <!-- /.panel -->
  	</div>
+ 	<?php 
+	$this->load->view('includes/aside');
+?>
   </div><!--end of row -->
                   </div>
 <?php $this->load->view('includes/footer');?>

@@ -10,14 +10,14 @@
 ?>
 <div class="container">
     <div class="row">
-	<div class="col-lg-12  service" id="service1">
-		<div class="panel panel-default">
+	<div class="col-lg-8  service" id="service1">
+		<div >
 			<?php foreach($blogTopicDescription as $description):?>
-    			<div class="panel-heading">
-            		  <span id = "BlogTopic"><?=$description->Topic ;?></span>
+    			<div >
+            		  <h3><span id = "BlogTopic"><?=$description->Topic ;?></span></h3>
             		  <?php 
             		  	$blogid = $description->Blog_topicID;
-            		  ?>"
+            		  ?>
             		 
     			</div> 
     			<div style ="padding: 13px 31px 6px 31px;text-align: justify;" id = "BlogDescription">
@@ -48,6 +48,9 @@
        </div>
  <!-- /.panel -->
  	</div>
+ 	<?php 
+	$this->load->view('includes/aside');
+?>
   </div><!--end of row -->
                   </div>
 <?php $this->load->view('includes/footer');?>

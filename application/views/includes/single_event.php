@@ -12,11 +12,7 @@
     <div class="row">
 
 					 <div class="col-lg-8  service" id="service1">
-					 	<div class="panel panel-default" >
-                        <div class="panel-heading">
-                            Details
-                        </div>
-                       
+					
                           <!-- List group -->
 <div class="panel-body">
 					 <?php
@@ -25,6 +21,7 @@
 							$title= $row->Topic;
 							$id= $row->Blog_topic_id;
 							$content=$row->details;
+							$posted=$row->Timestamp;
 					?>
 				<form method = "post">
 					<h1><?php echo $title;?></h1>
@@ -33,7 +30,8 @@
 					<p style = "text-align:justify">
 					<?php
 						
-						echo $content;
+						echo "<b>Posted On: </b>".$posted."<br /><br />";
+						echo '<p>'.$content.'</p>';
 						
                     ?>
 					</p>
@@ -44,9 +42,7 @@
 					<?php }?>
 				
              </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel --></div>
+                       </div>
                     <?php 
 	$this->load->view('includes/aside');
 ?>

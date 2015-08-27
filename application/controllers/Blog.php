@@ -5,10 +5,11 @@ class Blog extends CI_Controller {
 	 function __construct() {
             parent::__construct(); //call the contructor
             $this->load->model('blog_model');
+			$this->load->model('Home_model');
         }
 
 	public function index()
-	{
+	{   $data['upcoming']=$this->Home_model->eventNews($type=4);
 		$data['blogTopics'] = $this->getTopic();
 		$data['blogTopicDescription'] = $this->blog_model->getTopicDescription();
 		$data['blogDetails'] = $this->getBlogDetails();
@@ -23,7 +24,7 @@ class Blog extends CI_Controller {
 		$this->load->view('blog',$data);
 	}
 	function details($id){
-		
+		$data['upcoming']=$this->Home_model->eventNews($type=4);
 		$data['blogTopicDescription'] = $this->blog_model->getTopicDescriptions($id);
 		$data['topicComments'] = $this->blog_model->getComments($id);
 		$data['breadcrum'] = "Blog";

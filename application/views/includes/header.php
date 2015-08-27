@@ -80,7 +80,15 @@
 						<li><?php echo anchor('Departments/products','Products and Partnership')?></li>
 					</ul>
                <li><?php echo anchor('gallery','Gallery')?></li>
-               <li><?php echo anchor('blog','Blog')?></li>
+               <li><a href="#" data-toggle="dropdown" class="dropdown-toggle">News and Events<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><?php echo anchor('home/upcoming_events/1','Announcements')?></li>
+						<li><?php echo anchor('home/upcoming_events/2','Communications')?></li>
+						<li><?php echo anchor('home/upcoming_events/4','Upcoming Events')?></li>
+					
+					</ul>
+           		 </li>
+               <li><?php echo anchor('blog','Innovate')?></li>
             </ul>
 
         </div>

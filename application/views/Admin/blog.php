@@ -3,6 +3,12 @@
 
 <head>
 <?php $this->load->view('Admin/includes/header');?>
+ <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
+ <script>
+ //<![CDATA[
+        bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+  //]]>
+  </script>
 </head>
 <body>
     <div id="wrapper">

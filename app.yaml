@@ -26,8 +26,8 @@ handlers:
 - url: /assets/images/*
   static_dir: assets/images
   
-- url: /application/views/Admin/plugins/*
-  static_dir: application/views/Admin/plugins
+- url: /AdminAssets/tinymce/*
+  static_dir: AdminAssets/tinymce
 
 - url: /
   script: index.php

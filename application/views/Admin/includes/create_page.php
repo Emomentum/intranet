@@ -2,6 +2,12 @@
 <html lang="en">
 
 <head>
+	<script type="text/javascript" src="<?php echo base_url(); ?>AdminAssets/tinymce/tinymce.min.js"></script>
+		<script type="text/javascript">
+        tinymce.init({
+            selector: "textarea"
+        });
+    </script>
 <?php $this->load->view('Admin/includes/header');?>
 </head>
 <body>
@@ -39,16 +45,6 @@
   <label>Page Title</label>
  <input name="title" class="form-control">
 </div >
- <input name="title" class="form-control">
-</div >
- <div class="form-group" name="dates" type="hidden">
-  <label>Start Date</label>
- <input id="start" name="title" class="form-control" >
-</div>
- <div class="form-group" name="dates">
-  <label>End Date</label>
- <input id="end" name="title" class="form-control" >
-</div>
 
   <div class="form-group"> 
      

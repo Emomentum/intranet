@@ -2,6 +2,13 @@
 <html lang="en">
 
 <head>
+	<script type="text/javascript" src="<?php echo base_url(); ?>AdminAssets/tinymce/tinymce.min.js"></script>
+		<script type="text/javascript">
+        tinymce.init({
+            selector: "textarea"
+        });
+    </script>
+
 <?php $this->load->view('Admin/includes/header');?>
 </head>
 <body>
@@ -58,7 +65,7 @@ foreach ($edit_page as $row) {
 <div class="form-group"> 
      
   <label>Page Content</label>
-  <textarea name="content"class="form-control" rows="10"><?php echo $cont; ?></textarea> 
+  <textarea id="content" name="content"class="form-control" rows="10"><?php echo $cont; ?></textarea> 
   </div>
   
  

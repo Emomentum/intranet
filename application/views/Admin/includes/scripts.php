@@ -9,4 +9,4 @@
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo base_url()?>AdminAssets/js/sb-admin-2.js"></script>
 	 <!-- Editor JavaScript -->
-    <script src="<?php echo base_url()?>AdminAssets/plugins/tinymce_4.1.10/tinymce/js/tinymce/tinymce.min.js"></script>
+    
